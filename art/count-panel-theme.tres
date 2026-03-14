@@ -1,0 +1,23 @@
+[gd_resource type="Theme" format=3 uid="uid://diy477wtgbery"]
+
+[ext_resource type="FontFile" uid="uid://dkk4o0tpp0yxv" path="res://art/m6x11.ttf" id="1_yh2l7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3e653"]
+bg_color = Color(0, 0.2853329, 0.103349276, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1.3536774e-07, 0.1481877, 0.047243528, 1)
+
+[resource]
+HBoxContainer/constants/separation = 40
+Label/colors/font_color = Color(0, 0.14901961, 0.047058824, 1)
+Label/constants/line_spacing = 0
+Label/font_sizes/font_size = 100
+Label/fonts/font = ExtResource("1_yh2l7")
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_3e653")
