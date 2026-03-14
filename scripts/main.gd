@@ -35,6 +35,7 @@ func animate() -> void:
 		var diff = Global.state[species] - prev_count
 		if diff > 0:
 			for i in range(diff):
+				if available_positions.is_empty(): break
 				var new_pos : Vector2i = available_positions.pick_random()
 				available_positions.erase(new_pos)
 				$Entities.set_cell(new_pos, NAME_TO_ID[species], Vector2i(0, 0))
