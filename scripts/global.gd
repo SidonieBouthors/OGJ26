@@ -8,7 +8,7 @@ static var BEAVER = Beaver.new()
 static var OCELOT = Ocelot.new()
 static var BEAR = Bear.new()
 
-var available_entities: Dictionary[String, Entity] = [
+var entities: Dictionary[String, Entity] = [
 	COCONUT_TREE,
 	BERRIES_BUSH,
 	PARROT,
@@ -18,22 +18,28 @@ var available_entities: Dictionary[String, Entity] = [
 ].reduce(func(acc, ent):
 	acc[ent.name()] = ent
 	return acc
-, {})
+, {} as Dictionary[String, Entity])
 
-var state: Dictionary[String, int] = available_entities.keys().reduce(func(acc, ent_name):
-	acc[ent_name] = 0
+var state: Dictionary[String, int] = entities.keys().reduce(func(acc, ent_name):
+	acc[ent_name] = 3
 	return acc
-, {})
+, {} as Dictionary[String, int])
 var cycle_number = 0
-
+#
+#func _ready() -> void:
+	#state["parrot"] = 2
+	#state["coconut_tree"] = 4
+	#state["berries_bush"] = 4
+	
 func cycle():
-	var entities: Array[Entity] = state.keys().reduce(func(acc: Array[Entity], ent_name):
+	var timeline: Array[Entity] = state.keys().reduce(func(acc: Array[Entity], ent_name):
 		var ent_arr = []
 		ent_arr.resize(state[ent_name])
-		ent_arr.fill(available_entities[ent_name])
+		ent_arr.fill(entities[ent_name])
 		acc.append_array(ent_arr)
-	, [])
-	entities.shuffle()
+		return acc
+	, [] as Array[Entity])
+	timeline.shuffle()
 
 	var temp = TemporaryState.new()
 	temp.state = state.keys().reduce(func(acc, ent_name):
@@ -41,17 +47,17 @@ func cycle():
 		ent_temp.alive = state[ent_name]
 		ent_temp.available = state[ent_name]
 		acc[ent_name] = ent_temp
-	, {})
+		return acc
+	, {} as Dictionary[String, EntityTemporaryState])
 
-	for ent: Entity in entities:
+	for ent: Entity in timeline:
 		ent.update_state(temp, cycle_number)
 
-	cycle_number += 1
-
 	state = temp.state.keys().reduce(func(acc, ent_name):
-		acc[ent_name] = temp.state[ent_name].alive
+		acc[ent_name] = entities[ent_name].reproduction_stats().apply(temp.state[ent_name].alive, cycle_number)
 		return acc
-	, {})
+	, {} as Dictionary[String, int])
+	cycle_number += 1
 
 class TemporaryState:
 	var state: Dictionary[String, EntityTemporaryState]

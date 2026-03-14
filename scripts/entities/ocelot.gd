@@ -2,7 +2,8 @@ extends Entity
 class_name Ocelot
 
 func update_state(state: State.TemporaryState, _cycle: int):
-	state.require_destruct(State.PARROT.name())
+	if !state.require_destruct(State.PARROT.name()):
+		state.destruct(name())
 
 func name() -> String:
 	return "ocelot"

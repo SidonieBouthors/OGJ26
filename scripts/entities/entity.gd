@@ -16,11 +16,11 @@ class ReproductionStats:
 	var frequency: int
 	var minimum_count: int
 
-	static func init(multiplier: float, frequency: int, minimum_count: int) -> ReproductionStats:
+	static func init(m: float, f: int, c: int) -> ReproductionStats:
 		var stats = ReproductionStats.new()
-		stats.multiplier = multiplier
-		stats.frequency = frequency
-		stats.minimum_count = minimum_count
+		stats.multiplier = m
+		stats.frequency = f
+		stats.minimum_count = c
 		return stats
 		
 
