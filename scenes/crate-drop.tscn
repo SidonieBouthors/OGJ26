@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bg73r2yp62nw1"]
+
+[ext_resource type="Theme" uid="uid://bijpnnm6o83ek" path="res://art/theme.tres" id="1_c3uvn"]
+[ext_resource type="PackedScene" uid="uid://dkeicxn83cmom" path="res://scenes/crate-option.tscn" id="2_2lly3"]
+
+[node name="CrateDrop" type="CanvasLayer" unique_id=1377215731]
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=999915765]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_c3uvn")
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=879120341]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1659064516]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=1748055092]
+layout_mode = 2
+alignment = 1
+
+[node name="Crate3" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1384516715 instance=ExtResource("2_2lly3")]
+layout_mode = 2
+
+[node name="Crate1" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=516485465 instance=ExtResource("2_2lly3")]
+layout_mode = 2
+
+[node name="Crate2" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1594317798 instance=ExtResource("2_2lly3")]
+layout_mode = 2

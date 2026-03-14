@@ -17,6 +17,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
+		print("next cycle")
 		Global.apply_constraints()
 		animate()
 		await get_tree().create_timer(10.0).timeout
@@ -24,6 +25,7 @@ func _process(delta):
 		animate()
 
 func animate() -> void:
+	print("animating")
 	for species : String in Global.state:
 		var prev_count : int = prev_state[species]
 		var diff = Global.state[species] - prev_count
