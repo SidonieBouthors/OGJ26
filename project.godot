@@ -11,8 +11,18 @@ config_version=5
 [application]
 
 config/name="OGJ26"
+run/main_scene="uid://b62bvjtimyojt"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://art/sprites/icon.svg"
+
+[autoload]
+
+Global="*uid://boqie35slq7f5"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [physics]
 
