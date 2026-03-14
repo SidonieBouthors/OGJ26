@@ -15,4 +15,4 @@ func name() -> String:
 	return "parrot"
 
 func reproduction_stats() -> ReproductionStats:
-	return ReproductionStats.init(1.5, 2, 2)
+	return ReproductionStats.init(randf_range(1.5, 2.5), 1, 2)

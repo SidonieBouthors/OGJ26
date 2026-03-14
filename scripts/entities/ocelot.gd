@@ -2,11 +2,11 @@ extends Entity
 class_name Ocelot
 
 func update_state(state: State.TemporaryState, _cycle: int):
-	if !state.require_destruct(State.PARROT.name()):
+	if randi() % 2 == 0 and !state.require_destruct(State.PARROT.name()):
 		state.destruct(name())
 
 func name() -> String:
 	return "ocelot"
 
 func reproduction_stats() -> ReproductionStats:
-	return ReproductionStats.init(1.5, 2, 2)
+	return ReproductionStats.init(randf_range(1.2, 1.5), 1, 2)
