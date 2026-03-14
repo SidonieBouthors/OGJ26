@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cv7eh8qaeh1xc"]
+
+[ext_resource type="Theme" uid="uid://bijpnnm6o83ek" path="res://art/theme.tres" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://dxrpjffe8ds12" path="res://scripts/main_menu.gd" id="2_ekxnf"]
+
+[node name="PanelContainer" type="PanelContainer" unique_id=2093992530]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l6cm7")
+script = ExtResource("2_ekxnf")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=73137181]
+layout_mode = 2
+theme_override_constants/margin_left = 600
+theme_override_constants/margin_right = 600
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2132708029]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="TitlePanel" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=734137896]
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/TitlePanel" unique_id=456545859]
+layout_mode = 2
+text = "On a pas de nom encore"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1926863142]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1082041776]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="PlayButtonPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer" unique_id=1947656398]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer/PlayButtonPanel" unique_id=1994384587]
+layout_mode = 2
+text = "Play"
+
+[node name="QuitButtonPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer" unique_id=538205646]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer/QuitButtonPanel" unique_id=745993769]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer/PlayButtonPanel/PlayButton" to="." method="on_play"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer/QuitButtonPanel/QuitButton" to="." method="on_quit"]
