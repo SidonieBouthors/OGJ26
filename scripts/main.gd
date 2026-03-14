@@ -22,10 +22,10 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		print("next cycle")
-		Global.apply_constraints()
-		animate()
-		await get_tree().create_timer(10.0).timeout
 		Global.reproduce()
+		animate()
+		await get_tree().create_timer(2.0).timeout
+		Global.apply_constraints()
 		animate()
 
 func animate() -> void:

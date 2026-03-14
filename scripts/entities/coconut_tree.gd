@@ -10,4 +10,4 @@ func name() -> String:
 	return "coconut_tree"
 
 func reproduction_stats() -> ReproductionStats:
-	return ReproductionStats.init(1.5, 5, 1)
+	return ReproductionStats.init(randf_range(1.2, 1.4), 1, 2)

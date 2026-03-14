@@ -28,12 +28,12 @@ var state: Dictionary[String, int] = entities.keys().reduce(func(acc, ent_name):
 var cycle_number = 0
 
 func _ready() -> void:
-	state["parrot"] = 2
-	state["coconut_tree"] = 4
-	state["berries_bush"] = 4
-	state["bear"] = 0
-	state["beaver"] = 0
-	state["ocelot"] = 0
+	state["parrot"] = 10
+	state["coconut_tree"] = 10
+	state["berries_bush"] = 10
+	state["bear"] = 2
+	state["beaver"] = 4
+	state["ocelot"] = 6
 	
 func apply_constraints():
 	var timeline: Array[Entity] = state.keys().reduce(func(acc: Array[Entity], ent_name):
