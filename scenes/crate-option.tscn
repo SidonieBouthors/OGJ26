@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dkeicxn83cmom"]
+
+[ext_resource type="Theme" uid="uid://bijpnnm6o83ek" path="res://art/theme.tres" id="1_a5mml"]
+[ext_resource type="Texture2D" uid="uid://cw16rrj02pu1g" path="res://art/placeholder/crate1.png" id="1_c36j3"]
+[ext_resource type="Texture2D" uid="uid://kilhcy8usrum" path="res://art/placeholder/pastille.png" id="2_a5mml"]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" unique_id=1384516715]
+custom_minimum_size = Vector2(512, 512)
+scale = Vector2(4, 4)
+theme = ExtResource("1_a5mml")
+
+[node name="Button" type="TextureButton" parent="." unique_id=160277249]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("1_c36j3")
+stretch_mode = 4
+
+[node name="Control" type="Control" parent="." unique_id=1222989894]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control" unique_id=314695014]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -93.0
+offset_top = -68.25
+offset_right = 50.75
+offset_bottom = 80.75
+grow_horizontal = 0
+texture = ExtResource("2_a5mml")
+region_rect = Rect2(0, 0, 128, 128)
+patch_margin_left = 62
+patch_margin_top = 62
+patch_margin_right = 62
+patch_margin_bottom = 62
+
+[node name="Label" type="Label" parent="Control/NinePatchRect" unique_id=386350896]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.875
+offset_top = -44.625
+offset_right = 29.125
+offset_bottom = 67.375
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
