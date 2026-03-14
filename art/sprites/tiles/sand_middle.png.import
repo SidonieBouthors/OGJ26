@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cximv84ukiw1a"
-path="res://.godot/imported/spring_icon.png-457cc8bda87950caadfa3340052ca449.ctex"
+uid="uid://ddjtobl0b80gk"
+path="res://.godot/imported/sand_middle.png-130c36ef496cd983c0b6c05fed4f6290.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/spring_icon.png"
-dest_files=["res://.godot/imported/spring_icon.png-457cc8bda87950caadfa3340052ca449.ctex"]
+source_file="res://art/sprites/tiles/sand_middle.png"
+dest_files=["res://.godot/imported/sand_middle.png-130c36ef496cd983c0b6c05fed4f6290.ctex"]
 
 [params]
 

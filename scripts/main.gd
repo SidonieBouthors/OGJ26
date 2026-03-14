@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var NAME_TO_ID: Dictionary[String, int] = { State.PARROT.name() : 0, State.BERRIES_BUSH.name() : 1, State.COCONUT_TREE.name(): 2, State.BEAVER.name(): 3, State.BEAR.name(): 4, State.OCELOT.name(): 5 } 
-@onready var ISLAND_CELLS = $Island.get_used_cells_by_id(0)
+@onready var ISLAND_CELLS = $Island.get_used_cells()
 
 var timer: Timer = Timer.new()
 
@@ -10,8 +10,12 @@ var prev_state: Dictionary[String, int]
 
 func _ready():
 	available_positions = ISLAND_CELLS.duplicate()
-	for pos in $Entities.get_used_cells():
-		available_positions.erase(pos)
+	$Entities.clear()
+	for species : String in Global.state:
+		for i in range(Global.state[species]):
+			var new_pos : Vector2i = available_positions.pick_random()
+			available_positions.erase(new_pos)
+			$Entities.set_cell(new_pos, NAME_TO_ID[species], Vector2i(0, 0))
 	prev_state = Global.state.duplicate()
 	
 
