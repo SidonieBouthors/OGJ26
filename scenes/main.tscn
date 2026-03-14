@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b62bvjtimyojt"]
 
-[ext_resource type="Script" uid="uid://bip62nq5eegtn" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://bgow1vsq4bsl8" path="res://art/sprites/tiles/parrot.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://bs5krfgou2wrr" path="res://art/sprites/tiles/beach-side.png" id="2_tipki"]
 [ext_resource type="Texture2D" uid="uid://boc4m1hdkqtcl" path="res://art/sprites/tiles/grass-side.png" id="3_85g3d"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://daphve6b8alkr" path="res://art/sprites/tiles/beaver.png" id="6_choun"]
 [ext_resource type="Texture2D" uid="uid://bclshr4ckwc7i" path="res://art/sprites/tiles/bear.png" id="7_tipki"]
 [ext_resource type="Texture2D" uid="uid://ccrovlai4t2uf" path="res://art/sprites/tiles/ocelot.png" id="8_85g3d"]
+[ext_resource type="Theme" uid="uid://diy477wtgbery" path="res://art/count-panel-theme.tres" id="10_choun"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85g3d"]
 resource_name = "Beach_side"
@@ -81,3 +82,45 @@ tile_set = SubResource("TileSet_tbgi4")
 [node name="Entities" type="TileMapLayer" parent="." unique_id=458360903]
 tile_map_data = PackedByteArray("AAAKAAYAAAAAAAAAAAANAAUAAQAAAAAAAAAOAAcAAQAAAAAAAAAQAAQAAgAAAAAAAAARAAcAAgAAAAAAAAASAAQAAwAAAAAAAAATAAYAAwAAAAAAAAALAAgABAAAAAAAAAAMAAgABAAAAAAAAAALAAUABAAAAAAAAAATAAgABQAAAAAAAAAPAAUABQAAAAAAAAAOAAQABQAAAAAAAAAUAAUAAAAAAAAAAAAUAAcAAAAAAAAAAAAPAAoAAQAAAAAAAAAJAAQAAgAAAAAAAAAMAAIAAwAAAAAAAAA=")
 tile_set = SubResource("TileSet_o6xl0")
+
+[node name="Control" type="Control" parent="." unique_id=1837543510]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = ExtResource("10_choun")
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1270643849]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -296.0
+offset_bottom = 319.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer" unique_id=1845802853]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=1824343540]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/MarginContainer" unique_id=188768350]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=152571809]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("8_85g3d")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1463502501]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1993012233]
+layout_mode = 2
+text = "20"
