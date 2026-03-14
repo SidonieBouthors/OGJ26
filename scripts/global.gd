@@ -31,7 +31,7 @@ var cycle_number = 0
 	#state["coconut_tree"] = 4
 	#state["berries_bush"] = 4
 	
-func cycle():
+func apply_constraints():
 	var timeline: Array[Entity] = state.keys().reduce(func(acc: Array[Entity], ent_name):
 		var ent_arr = []
 		ent_arr.resize(state[ent_name])
@@ -54,9 +54,14 @@ func cycle():
 		ent.update_state(temp, cycle_number)
 
 	state = temp.state.keys().reduce(func(acc, ent_name):
-		acc[ent_name] = entities[ent_name].reproduction_stats().apply(temp.state[ent_name].alive, cycle_number)
+		acc[ent_name] = temp.state[ent_name].alive
 		return acc
 	, {} as Dictionary[String, int])
+
+func reproduce():
+	for ent_name in state:
+		state[ent_name] = entities[ent_name].reproduction_stats().apply(state[ent_name], cycle_number)
+
 	cycle_number += 1
 
 class TemporaryState:
