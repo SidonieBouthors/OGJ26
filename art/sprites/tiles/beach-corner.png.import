@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6j1aoqs6fbkk"
-path="res://.godot/imported/cerisier.png-798d1afd3b9353647af531237b85ec24.ctex"
+uid="uid://ctckagma6osjt"
+path="res://.godot/imported/beach-corner.png-9208049d6fc970c80f0eefcaac5df88a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/cerisier.png"
-dest_files=["res://.godot/imported/cerisier.png-798d1afd3b9353647af531237b85ec24.ctex"]
+source_file="res://art/sprites/tiles/beach-corner.png"
+dest_files=["res://.godot/imported/beach-corner.png-9208049d6fc970c80f0eefcaac5df88a.ctex"]
 
 [params]
 

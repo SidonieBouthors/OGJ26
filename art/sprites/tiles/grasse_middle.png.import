@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cddqwiw4b471y"
-path="res://.godot/imported/fall_icon.png-c89053373ed1ad8a23583d6234445c9b.ctex"
+uid="uid://xb6xag8ux4mr"
+path="res://.godot/imported/grasse_middle.png-e05c943b2506659e3d6628d4132b7263.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/fall_icon.png"
-dest_files=["res://.godot/imported/fall_icon.png-c89053373ed1ad8a23583d6234445c9b.ctex"]
+source_file="res://art/sprites/tiles/grasse_middle.png"
+dest_files=["res://.godot/imported/grasse_middle.png-e05c943b2506659e3d6628d4132b7263.ctex"]
 
 [params]
 

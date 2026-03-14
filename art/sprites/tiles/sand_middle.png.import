@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5dewk053ukj4"
-path="res://.godot/imported/winter_icon.png-2d77720b5974867f118263fb10c55c21.ctex"
+uid="uid://ddjtobl0b80gk"
+path="res://.godot/imported/sand_middle.png-130c36ef496cd983c0b6c05fed4f6290.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/winter_icon.png"
-dest_files=["res://.godot/imported/winter_icon.png-2d77720b5974867f118263fb10c55c21.ctex"]
+source_file="res://art/sprites/tiles/sand_middle.png"
+dest_files=["res://.godot/imported/sand_middle.png-130c36ef496cd983c0b6c05fed4f6290.ctex"]
 
 [params]
 
