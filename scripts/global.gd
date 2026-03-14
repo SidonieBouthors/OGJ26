@@ -21,16 +21,19 @@ var entities: Dictionary[String, Entity] = [
 , {} as Dictionary[String, Entity])
 
 var state: Dictionary[String, int] = entities.keys().reduce(func(acc, ent_name):
-	acc[ent_name] = 3
+	acc[ent_name] = 0
 	return acc
 , {} as Dictionary[String, int])
 
 var cycle_number = 0
-#
-#func _ready() -> void:
-	#state["parrot"] = 2
-	#state["coconut_tree"] = 4
-	#state["berries_bush"] = 4
+
+func _ready() -> void:
+	state["parrot"] = 2
+	state["coconut_tree"] = 4
+	state["berries_bush"] = 4
+	state["bear"] = 0
+	state["beaver"] = 0
+	state["ocelot"] = 0
 	
 func apply_constraints():
 	var timeline: Array[Entity] = state.keys().reduce(func(acc: Array[Entity], ent_name):
