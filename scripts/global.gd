@@ -24,6 +24,7 @@ var state: Dictionary[String, int] = entities.keys().reduce(func(acc, ent_name):
 	acc[ent_name] = 3
 	return acc
 , {} as Dictionary[String, int])
+
 var cycle_number = 0
 #
 #func _ready() -> void:

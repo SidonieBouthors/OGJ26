@@ -3,30 +3,27 @@ extends Node2D
 @onready var NAME_TO_ID: Dictionary[String, int] = { State.PARROT.name() : 0, State.BERRIES_BUSH.name() : 1, State.COCONUT_TREE.name(): 2, State.BEAVER.name(): 3, State.BEAR.name(): 4, State.OCELOT.name(): 5 } 
 @onready var ISLAND_CELLS = $Island.get_used_cells_by_id(0)
 
-var timer: Timer
+var timer: Timer = Timer.new()
+
+var available_positions : Array[Vector2i]
+var prev_state: Dictionary[String, int] 
 
 func _ready():
-	timer = Timer.new()
-	add_child(timer)
-	timer.wait_time = 5.0
-	timer.autostart = true
-	#timer.timeout.connect(next_cycle)
-	timer.one_shot = false
-	timer.start()
+	available_positions = ISLAND_CELLS.duplicate()
+	for pos in $Entities.get_used_cells():
+		available_positions.erase(pos)
+	prev_state = Global.state.duplicate()
+	
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		next_cycle()
+		Global.apply_constraints()
+		animate()
+		await get_tree().create_timer(10.0).timeout
+		Global.reproduce()
+		animate()
 
-func next_cycle() -> void:
-	print("next_cycle")
-	var current_positions : Array[Vector2i] = $Entities.get_used_cells()
-	var available_positions : Array[Vector2i] = ISLAND_CELLS.duplicate()
-	for pos in current_positions:
-		available_positions.erase(pos)
-	
-	var prev_state : Dictionary[String, int] = Global.state.duplicate()
-	Global.cycle()
+func animate() -> void:
 	for species : String in Global.state:
 		var prev_count : int = prev_state[species]
 		var diff = Global.state[species] - prev_count
@@ -42,3 +39,4 @@ func next_cycle() -> void:
 				var removed_pos : Vector2i = current_entity_positions.pop_back()
 				$Entities.erase_cell(removed_pos)
 				available_positions.append(removed_pos)
+	prev_state = Global.state.duplicate()
