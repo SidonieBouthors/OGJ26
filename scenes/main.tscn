@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b62bvjtimyojt"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://bip62nq5eegtn" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://bgow1vsq4bsl8" path="res://art/sprites/tiles/parrot.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://bs5krfgou2wrr" path="res://art/sprites/tiles/beach-side.png" id="2_tipki"]
 [ext_resource type="Texture2D" uid="uid://cjuny5r0fukt2" path="res://art/sprites/tiles/grass-corner.png" id="2_trceg"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://by8x4hw5qxsca" path="res://art/sprites/tiles/coconut.png" id="7_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://ccrovlai4t2uf" path="res://art/sprites/tiles/ocelot.png" id="8_85g3d"]
 [ext_resource type="Theme" uid="uid://diy477wtgbery" path="res://art/count-panel-theme.tres" id="10_choun"]
+[ext_resource type="Script" uid="uid://d2j4k8ylg8ucl" path="res://scenes/entity-count-panel.gd" id="15_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://c3hf2ftfdppyq" path="res://scenes/entity-count.tscn" id="15_jkv2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dp3eg"]
 texture = ExtResource("2_trceg")
@@ -118,7 +120,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 theme = ExtResource("10_choun")
 
-[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1270643849]
+[node name="EntityCountPanel" type="PanelContainer" parent="Control" unique_id=1270643849]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -126,29 +128,16 @@ anchor_right = 1.0
 offset_left = -296.0
 offset_bottom = 319.0
 grow_horizontal = 0
+script = ExtResource("15_jbj1t")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer" unique_id=1845802853]
+[node name="EntityCountVBox" type="VBoxContainer" parent="Control/EntityCountPanel" unique_id=1845802853]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=1824343540]
+[node name="EntityCountDisplay" parent="Control/EntityCountPanel/EntityCountVBox" unique_id=946961261 instance=ExtResource("15_jkv2x")]
 layout_mode = 2
+entity_texture = ExtResource("6_choun")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/MarginContainer" unique_id=188768350]
+[node name="MarginContainer2" parent="Control/EntityCountPanel/EntityCountVBox" unique_id=2045080350 instance=ExtResource("15_jkv2x")]
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=152571809]
-texture_filter = 1
-layout_mode = 2
-texture = ExtResource("8_85g3d")
-expand_mode = 2
-stretch_mode = 4
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1463502501]
-layout_mode = 2
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 0
-
-[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1993012233]
-layout_mode = 2
-text = "20"
+entity_texture = ExtResource("2_sugp2")
