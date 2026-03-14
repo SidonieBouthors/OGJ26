@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://52e3qbyjhr05"
-path="res://.godot/imported/summer_icon.png-ec9dcbabb8cdc2f78b44cd99390fe5eb.ctex"
+uid="uid://cjuny5r0fukt2"
+path="res://.godot/imported/grass-corner.png-bcc11f584db718dc42da96381766d408.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/summer_icon.png"
-dest_files=["res://.godot/imported/summer_icon.png-ec9dcbabb8cdc2f78b44cd99390fe5eb.ctex"]
+source_file="res://art/sprites/tiles/grass-corner.png"
+dest_files=["res://.godot/imported/grass-corner.png-bcc11f584db718dc42da96381766d408.ctex"]
 
 [params]
 
