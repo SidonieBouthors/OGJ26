@@ -9,5 +9,8 @@ func update_state(state: State.TemporaryState, cycle: int):
 func name() -> String:
 	return "coconut_tree"
 
+func crate_quantity() -> Array:
+	return [2, 3]
+
 func reproduction_stats() -> ReproductionStats:
 	return ReproductionStats.init(randf_range(1.2, 1.4), 1, 2)

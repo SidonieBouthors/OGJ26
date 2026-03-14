@@ -4,10 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://kilhcy8usrum" path="res://art/placeholder/pastille.png" id="2_a5mml"]
 [ext_resource type="Script" uid="uid://b4xyc15ttky2q" path="res://scripts/crate_option.gd" id="2_un1qn"]
 [ext_resource type="Texture2D" uid="uid://chprxflh20h6y" path="res://art/sprites/crate.png" id="3_un1qn"]
+[ext_resource type="Texture2D" uid="uid://bclshr4ckwc7i" path="res://art/sprites/tiles/bear.png" id="4_ahu6h"]
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" unique_id=1384516715]
 custom_minimum_size = Vector2(512, 512)
 scale = Vector2(4, 4)
+mouse_default_cursor_shape = 3
 theme = ExtResource("1_a5mml")
 script = ExtResource("2_un1qn")
 
@@ -17,8 +19,22 @@ size_flags_horizontal = 3
 texture_normal = ExtResource("3_un1qn")
 stretch_mode = 4
 
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1081932833]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 192
+theme_override_constants/margin_top = 192
+theme_override_constants/margin_right = 192
+theme_override_constants/margin_bottom = 192
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=1443092375]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_ahu6h")
+
 [node name="Control" type="Control" parent="." unique_id=1222989894]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control" unique_id=314695014]
 texture_filter = 1

@@ -8,6 +8,9 @@ func update_state(_state: State.TemporaryState, _cycle: int):
 func name() -> String:
 	return "entity"
 
+func crate_quantity() -> Array:
+	return [1, 2, 3]
+
 func reproduction_stats() -> ReproductionStats:
 	return ReproductionStats.init(1, -1, 0)
 

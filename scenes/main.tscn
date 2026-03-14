@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://by8x4hw5qxsca" path="res://art/sprites/tiles/coconut_tree.png" id="7_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://ccrovlai4t2uf" path="res://art/sprites/tiles/ocelot.png" id="8_85g3d"]
 [ext_resource type="Theme" uid="uid://diy477wtgbery" path="res://art/count-panel-theme.tres" id="10_choun"]
+[ext_resource type="PackedScene" uid="uid://bg73r2yp62nw1" path="res://scenes/crate-drop.tscn" id="13_trceg"]
 [ext_resource type="Script" uid="uid://d2j4k8ylg8ucl" path="res://scenes/entity-count-panel.gd" id="15_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://c3hf2ftfdppyq" path="res://scenes/entity-count.tscn" id="15_jkv2x"]
 
@@ -92,14 +93,14 @@ tile_set = SubResource("TileSet_tbgi4")
 tile_map_data = PackedByteArray("AAALAAYAAQAAAAAAAAAQAAgAAQAAAAAAAAAUAAYAAQAAAAAAAAAPAAYAAQAAAAAAAAAKAAgAAAAAAAAAAAANAAoAAAAAAAAAAAARAAYAAgAAAAAAAAALAAIAAgAAAAAAAAARAAUAAgAAAAAAAAATAAkAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_o6xl0")
 
-[node name="Control" type="Control" parent="." unique_id=1837543510]
+[node name="Counter" type="Control" parent="." unique_id=1837543510]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme = ExtResource("10_choun")
 
-[node name="EntityCountPanel" type="PanelContainer" parent="Control" unique_id=1270643849]
+[node name="EntityCountPanel" type="PanelContainer" parent="Counter" unique_id=1270643849]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -109,14 +110,19 @@ offset_bottom = 319.0
 grow_horizontal = 0
 script = ExtResource("15_jbj1t")
 
-[node name="EntityCountVBox" type="VBoxContainer" parent="Control/EntityCountPanel" unique_id=1845802853]
+[node name="EntityCountVBox" type="VBoxContainer" parent="Counter/EntityCountPanel" unique_id=1845802853]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="EntityCountDisplay" parent="Control/EntityCountPanel/EntityCountVBox" unique_id=946961261 instance=ExtResource("15_jkv2x")]
+[node name="EntityCountDisplay" parent="Counter/EntityCountPanel/EntityCountVBox" unique_id=946961261 instance=ExtResource("15_jkv2x")]
 layout_mode = 2
 entity_texture = ExtResource("6_choun")
 
-[node name="MarginContainer2" parent="Control/EntityCountPanel/EntityCountVBox" unique_id=2045080350 instance=ExtResource("15_jkv2x")]
+[node name="MarginContainer2" parent="Counter/EntityCountPanel/EntityCountVBox" unique_id=2045080350 instance=ExtResource("15_jkv2x")]
 layout_mode = 2
 entity_texture = ExtResource("2_sugp2")
+
+[node name="CrateDrop" parent="." unique_id=1377215731 instance=ExtResource("13_trceg")]
+visible = false
+
+[connection signal="chose_crate" from="CrateDrop" to="." method="_on_crate_chosen"]

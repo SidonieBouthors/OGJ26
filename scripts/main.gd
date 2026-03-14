@@ -3,8 +3,6 @@ extends Node2D
 @onready var NAME_TO_ID: Dictionary[String, int] = { State.PARROT.name() : 0, State.BERRIES_BUSH.name() : 1, State.COCONUT_TREE.name(): 2, State.BEAVER.name(): 3, State.BEAR.name(): 4, State.OCELOT.name(): 5 } 
 @onready var ISLAND_CELLS = $Island.get_used_cells_by_id(0)
 
-var timer: Timer = Timer.new()
-
 var available_positions : Array[Vector2i]
 var prev_state: Dictionary[String, int] 
 
@@ -25,15 +23,13 @@ func _process(delta):
 		next_cycle()
 
 func next_cycle():
-	if Global.cycle_number % 5 == 0:
-		pass
-		#spawn_crate()
 	Global.reproduce()
 	animate()
 	await get_tree().create_timer(2.0).timeout
 	Global.apply_constraints()
 	animate()
-	
+	if Global.cycle_number % 5 == 0:
+		spawn_crate()
 
 
 func animate() -> void:
@@ -56,12 +52,23 @@ func animate() -> void:
 				available_positions.append(removed_pos)
 	prev_state = Global.state.duplicate()
 
+func find_crate_quantity(species: String) -> int:
+	var entity = Global.entities[species]
+	return entity.crate_quantity().pick_random()
 
 func spawn_crate():
 	var species1 : String = Global.state.keys().pick_random()
 	var species2 : String = Global.state.keys().pick_random()
 	while species2 == species1:
 		species2 = Global.state.keys().pick_random()
-	
-	
-	
+		
+	var n1 = find_crate_quantity(species1)
+	var n2 = find_crate_quantity(species2)
+	$CrateDrop.set_crate_species(species1, species2)
+	$CrateDrop.set_quantities(n1, n2)
+	$CrateDrop.visible = true
+
+
+func _on_crate_chosen(species, quantity):
+	Global.state[species] = Global.state[species] + 2
+	animate()

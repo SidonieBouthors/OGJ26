@@ -7,11 +7,11 @@ var SPECIES_TEXTURES : Dictionary[String, CompressedTexture2D] = { State.PARROT.
 var species: String
 var quantity: int
 
-signal chose_crate(pair: Array)
+signal chose_crate(species: String, quantity: int)
 
 func set_species(spe: String):
 	species = spe
-	$Button.texture_normal = SPECIES_TEXTURES[spe]
+	$MarginContainer/TextureRect.texture = SPECIES_TEXTURES[spe]
 
 func set_quantity(n: int):
 	quantity = n
@@ -19,4 +19,4 @@ func set_quantity(n: int):
 
 
 func _on_button_pressed():
-	chose_crate.emit([species, quantity])
+	chose_crate.emit(species, quantity)

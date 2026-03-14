@@ -36,3 +36,6 @@ layout_mode = 2
 
 [node name="Crate2" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1384516715 instance=ExtResource("2_2lly3")]
 layout_mode = 2
+
+[connection signal="chose_crate" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/Crate1" to="." method="_on_crate_chosen"]
+[connection signal="chose_crate" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/Crate2" to="." method="_on_crate_chosen"]
