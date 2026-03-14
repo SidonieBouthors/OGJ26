@@ -22,11 +22,19 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		print("next cycle")
-		Global.reproduce()
-		animate()
-		await get_tree().create_timer(2.0).timeout
-		Global.apply_constraints()
-		animate()
+		next_cycle()
+
+func next_cycle():
+	if Global.cycle_number % 5 == 0:
+		pass
+		#spawn_crate()
+	Global.reproduce()
+	animate()
+	await get_tree().create_timer(2.0).timeout
+	Global.apply_constraints()
+	animate()
+	
+
 
 func animate() -> void:
 	print("animating")
@@ -47,3 +55,13 @@ func animate() -> void:
 				$Entities.erase_cell(removed_pos)
 				available_positions.append(removed_pos)
 	prev_state = Global.state.duplicate()
+
+
+func spawn_crate():
+	var species1 : String = Global.state.keys().pick_random()
+	var species2 : String = Global.state.keys().pick_random()
+	while species2 == species1:
+		species2 = Global.state.keys().pick_random()
+	
+	
+	

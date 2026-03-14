@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dn67qxku58nrb" path="res://art/sprites/tiles/berries_bush.png" id="5_85g3d"]
 [ext_resource type="Texture2D" uid="uid://daphve6b8alkr" path="res://art/sprites/tiles/beaver.png" id="6_choun"]
 [ext_resource type="Texture2D" uid="uid://bclshr4ckwc7i" path="res://art/sprites/tiles/bear.png" id="7_tipki"]
-[ext_resource type="Texture2D" uid="uid://by8x4hw5qxsca" path="res://art/sprites/tiles/coconut.png" id="7_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://by8x4hw5qxsca" path="res://art/sprites/tiles/coconut_tree.png" id="7_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://ccrovlai4t2uf" path="res://art/sprites/tiles/ocelot.png" id="8_85g3d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85g3d"]

@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://bg73r2yp62nw1"]
 
+[ext_resource type="Script" uid="uid://q1rcrwv7lwrw" path="res://scripts/crate_drop.gd" id="1_04eg4"]
 [ext_resource type="Theme" uid="uid://bijpnnm6o83ek" path="res://art/theme.tres" id="1_c3uvn"]
 [ext_resource type="PackedScene" uid="uid://dkeicxn83cmom" path="res://scenes/crate-option.tscn" id="2_2lly3"]
 
 [node name="CrateDrop" type="CanvasLayer" unique_id=1377215731]
+script = ExtResource("1_04eg4")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=999915765]
 anchors_preset = 8
@@ -29,11 +31,8 @@ layout_mode = 2
 layout_mode = 2
 alignment = 1
 
-[node name="Crate3" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1384516715 instance=ExtResource("2_2lly3")]
-layout_mode = 2
-
 [node name="Crate1" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=516485465 instance=ExtResource("2_2lly3")]
 layout_mode = 2
 
-[node name="Crate2" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1594317798 instance=ExtResource("2_2lly3")]
+[node name="Crate2" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1384516715 instance=ExtResource("2_2lly3")]
 layout_mode = 2
