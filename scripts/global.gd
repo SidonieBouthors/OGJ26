@@ -26,15 +26,16 @@ var state: Dictionary[String, int] = entities.keys().reduce(func(acc, ent_name):
 , {} as Dictionary[String, int])
 
 var cycle_number = 0
+var victory_condition_met_count = 0
 
 func _ready() -> void:
 	state["parrot"] = 10
 	state["coconut_tree"] = 10
 	state["berries_bush"] = 10
-	state["bear"] = 2
+	state["bear"] = 3
 	state["beaver"] = 4
 	state["ocelot"] = 6
-	
+
 func apply_constraints():
 	var timeline: Array[Entity] = state.keys().reduce(func(acc: Array[Entity], ent_name):
 		var ent_arr = []
@@ -62,11 +63,23 @@ func apply_constraints():
 		return acc
 	, {} as Dictionary[String, int])
 
+	check_victory()
+	cycle_number += 1
+
 func reproduce():
 	for ent_name in state:
 		state[ent_name] = entities[ent_name].reproduction_stats().apply(state[ent_name], cycle_number)
 
-	cycle_number += 1
+func check_victory():
+	if state.values().all(func(c): return c >= 3):
+		print("condition met")
+		victory_condition_met_count += 1
+	else:
+		victory_condition_met_count = 0
+
+	if victory_condition_met_count >= 3:
+		print("Victory!!!!")
+
 
 class TemporaryState:
 	var state: Dictionary[String, EntityTemporaryState]
