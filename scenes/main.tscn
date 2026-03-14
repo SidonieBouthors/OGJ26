@@ -1,3 +1,76 @@
-[gd_scene format=3 uid="uid://b62bvjtimyojt"]
+[gd_scene format=4 uid="uid://b62bvjtimyojt"]
+
+[ext_resource type="Script" uid="uid://bip62nq5eegtn" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="Texture2D" uid="uid://bgow1vsq4bsl8" path="res://art/sprites/tiles/parrot.png" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://bs5krfgou2wrr" path="res://art/sprites/tiles/beach-side.png" id="2_tipki"]
+[ext_resource type="Texture2D" uid="uid://c6j1aoqs6fbkk" path="res://art/sprites/cerisier.png" id="4_tipki"]
+[ext_resource type="Texture2D" uid="uid://cddqwiw4b471y" path="res://art/sprites/fall_icon.png" id="5_85g3d"]
+[ext_resource type="Texture2D" uid="uid://cximv84ukiw1a" path="res://art/sprites/spring_icon.png" id="6_choun"]
+[ext_resource type="Texture2D" uid="uid://bclshr4ckwc7i" path="res://art/sprites/tiles/bear.png" id="7_tipki"]
+[ext_resource type="Texture2D" uid="uid://ccrovlai4t2uf" path="res://art/sprites/tiles/ocelot.png" id="8_85g3d"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85g3d"]
+resource_name = "Beach_side"
+texture = ExtResource("2_tipki")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tbgi4"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_85g3d")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tefeu"]
+resource_name = "Parrot"
+texture = ExtResource("2_sugp2")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trceg"]
+resource_name = "Berries_bush"
+texture = ExtResource("4_tipki")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8y0u"]
+resource_name = "Coconut_tree"
+texture = ExtResource("5_85g3d")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jkv2x"]
+resource_name = "Beaver"
+texture = ExtResource("6_choun")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbj1t"]
+resource_name = "Bear"
+texture = ExtResource("7_tipki")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_muem4"]
+resource_name = "Ocelot"
+texture = ExtResource("8_85g3d")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_o6xl0"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_tefeu")
+sources/1 = SubResource("TileSetAtlasSource_trceg")
+sources/2 = SubResource("TileSetAtlasSource_a8y0u")
+sources/3 = SubResource("TileSetAtlasSource_jkv2x")
+sources/4 = SubResource("TileSetAtlasSource_jbj1t")
+sources/5 = SubResource("TileSetAtlasSource_muem4")
 
 [node name="Main" type="Node2D" unique_id=1135552424]
+script = ExtResource("1_sugp2")
+
+[node name="Island" type="TileMapLayer" parent="." unique_id=982610781]
+tile_map_data = PackedByteArray("AAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAgAAAAAAAAAAAAJAAkAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAgAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAALAAkAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAMAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAUAAAAAAAAAAAAMAAYAAAAAAAAAAAAMAAcAAAAAAAAAAAAMAAgAAAAAAAAAAAAMAAkAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAMAAAAAAAAAAAANAAQAAAAAAAAAAAANAAUAAAAAAAAAAAANAAYAAAAAAAAAAAANAAcAAAAAAAAAAAANAAgAAAAAAAAAAAANAAkAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAMAAAAAAAAAAAAOAAQAAAAAAAAAAAAOAAUAAAAAAAAAAAAOAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAAOAAgAAAAAAAAAAAAOAAkAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAMAAAAAAAAAAAAPAAQAAAAAAAAAAAAPAAUAAAAAAAAAAAAPAAYAAAAAAAAAAAAPAAcAAAAAAAAAAAAPAAgAAAAAAAAAAAAPAAkAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAMAAAAAAAAAAAAQAAQAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAYAAAAAAAAAAAAQAAcAAAAAAAAAAAAQAAgAAAAAAAAAAAAQAAkAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAMAAAAAAAAAAAARAAQAAAAAAAAAAAARAAUAAAAAAAAAAAARAAYAAAAAAAAAAAARAAcAAAAAAAAAAAARAAgAAAAAAAAAAAARAAkAAAAAAAAAAAARAAoAAAAAAAAAAAASAAMAAAAAAAAAAAASAAQAAAAAAAAAAAASAAUAAAAAAAAAAAASAAYAAAAAAAAAAAASAAcAAAAAAAAAAAASAAgAAAAAAAAAAAASAAkAAAAAAAAAAAASAAoAAAAAAAAAAAATAAMAAAAAAAAAAAATAAQAAAAAAAAAAAATAAUAAAAAAAAAAAATAAYAAAAAAAAAAAATAAcAAAAAAAAAAAATAAgAAAAAAAAAAAATAAkAAAAAAAAAAAATAAoAAAAAAAAAAAAUAAMAAAAAAAAAAAAUAAQAAAAAAAAAAAAUAAUAAAAAAAAAAAAUAAYAAAAAAAAAAAAUAAcAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAoAAAAAAAAAAAAVAAMAAAAAAAAAAAAVAAQAAAAAAAAAAAAVAAUAAAAAAAAAAAAVAAYAAAAAAAAAAAAVAAcAAAAAAAAAAAAVAAgAAAAAAAAAAAAVAAkAAAAAAAAAAAAVAAoAAAAAAAAAAAAKAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAgAAAAAAAAAAAALAAsAAAAAAAAAAAAMAAsAAAAAAAAAAAANAAsAAAAAAAAAAAAOAAsAAAAAAAAAAAAPAAsAAAAAAAAAAAAQAAsAAAAAAAAAAAAQAAwAAAAAAAAAAAARAAsAAAAAAAAAAAASAAsAAAAAAAAAAAATAAsAAAAAAAAAAAAWAAcAAAAAAAAAAAAWAAYAAAAAAAAAAAAWAAUAAAAAAAAAAAAWAAQAAAAAAAAAAAARAAIAAAAAAAAAAAAQAAIAAAAAAAAAAAAPAAIAAAAAAAAAAAAOAAIAAAAAAAAAAAANAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAMAAwAAAAAAAAAAAANAAwAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_tbgi4")
+
+[node name="Entities" type="TileMapLayer" parent="." unique_id=458360903]
+tile_map_data = PackedByteArray("AAAKAAYAAAAAAAAAAAANAAUAAQAAAAAAAAAOAAcAAQAAAAAAAAAQAAQAAgAAAAAAAAARAAcAAgAAAAAAAAASAAQAAwAAAAAAAAATAAYAAwAAAAAAAAALAAgABAAAAAAAAAAMAAgABAAAAAAAAAALAAUABAAAAAAAAAATAAgABQAAAAAAAAAPAAUABQAAAAAAAAAOAAQABQAAAAAAAAAUAAUAAAAAAAAAAAAUAAcAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_o6xl0")
