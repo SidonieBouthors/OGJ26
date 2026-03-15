@@ -7,15 +7,19 @@ var available_positions: Array[Vector2i]
 var prev_state: Dictionary[String, int]
 
 func _ready():
+	Global.reset()
 	Global.max_entities = ISLAND_CELLS.size()
 	available_positions = ISLAND_CELLS.duplicate()
 	$Entities.clear()
+	$CanvasLayer/EntityCountPanel.update()
 	for species: String in Global.state:
 		for i in range(Global.state[species]):
 			var new_pos: Vector2i = available_positions.pick_random()
 			available_positions.erase(new_pos)
 			$Entities.set_cell(new_pos, NAME_TO_ID[species], Vector2i(0, 0))
 	prev_state = Global.state.duplicate()
+	
+	Global.victory.connect(func(): $Victory.visible = true)
 
 func next_cycle():
 	Global.reproduce()
@@ -69,7 +73,7 @@ func spawn_crate(num_options: int = 3):
 
 func _on_crate_chosen(species: String, quantity: int):
 	quantity = min(Global.max_entities - Global.count_total(), quantity)
-	Global.logbook.add_log("{0} {1} arrived by sea".format([quantity, Global.entities[species].display_name(quantity > 1)]))
+	Logbook.add_log("{0} {1} arrived by sea".format([quantity, Global.entities[species].display_name(quantity > 1)]))
 	Global.state[species] = Global.state[species] + quantity
 	animate()
 
@@ -82,3 +86,9 @@ func _on_next_state_button_pressed():
 func _on_restart_button_pressed():
 	Global.reset()
 	get_tree().reload_current_scene()
+
+func _on_quit():
+	get_tree().quit()
+
+func _on_back():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

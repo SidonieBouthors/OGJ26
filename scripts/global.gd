@@ -1,6 +1,8 @@
 extends Node
 class_name State
 
+signal victory
+
 static var COCONUT_TREE = CoconutTree.new()
 static var BERRIES_BUSH = BerriesBush.new()
 static var PARROT = Parrot.new()
@@ -28,8 +30,6 @@ var state: Dictionary[String, int] = entities.keys().reduce(func(acc, ent_name):
 var cycle_number = 0
 var victory_condition_met_count = 0
 
-var logbook: Logbook = Logbook.new()
-
 var max_entities: int
 
 func _ready() -> void:
@@ -45,6 +45,9 @@ func _ready() -> void:
 	state["bear"] = 0
 	state["beaver"] = 0
 	state["ocelot"] = 0
+	
+	cycle_number = 0
+	victory_condition_met_count = 0
 
 func apply_constraints():
 	var timeline: Array[Entity] = state.keys().reduce(func(acc: Array[Entity], ent_name):
@@ -74,8 +77,8 @@ func apply_constraints():
 	, {} as Dictionary[String, int])
 
 
-	Global.logbook.add_log("Logs for cycle %d" % cycle_number)
-	Global.logbook.process_pending()
+	Logbook.add_log("Logs for cycle %d" % cycle_number)
+	Logbook.process_pending()
 
 	check_victory()
 	cycle_number += 1
@@ -94,7 +97,7 @@ func reproduce():
 		for species in ideal_increase:
 			var growth = max((floorf(ideal_increase[species] * ratio) as int) - 1, 0)
 			ideal_increase[species] = growth
-			Global.logbook.add_pending(
+			Logbook.add_pending(
 				"%s_growth" % species,
 				Logbook.CountedEntityEntry.new(
 					"{count} {counted} were born",
@@ -112,7 +115,7 @@ func reproduce():
 	
 	for e in ideal_state:
 		if ideal_state[e] > state[e]:
-			Global.logbook.add_pending(
+			Logbook.add_pending(
 				"%s_growth" % e,
 				Logbook.CountedEntityEntry.new(
 					"{count} {counted} were born",
@@ -130,7 +133,7 @@ func count_total(temp_state: Dictionary[String, int] = state) -> int:
 		return acc + count)
 
 func check_victory():
-	if state.values().all(func(c): return c >= 3):
+	if state.values().all(func(c): return c >= 1):
 		print("condition met")
 		victory_condition_met_count += 1
 	else:
@@ -138,6 +141,7 @@ func check_victory():
 
 	if victory_condition_met_count >= 3:
 		print("Victory!!!!")
+		victory.emit()
 
 
 class TemporaryState:
@@ -150,7 +154,7 @@ class TemporaryState:
 			state[vict].available -= 1
 			state[vict].alive -= 1
 			
-			Global.logbook.add_pending_2ents(ent, vict, action)
+			Logbook.add_pending_2ents(ent, vict, action)
 
 			return true
 
@@ -159,7 +163,7 @@ class TemporaryState:
 	func require(ent: Entity, vict: Entity, action: String) -> bool:
 		if state[vict].available > 0:
 			state[vict].available -= 1
-			Global.logbook.add_pending_2ents(ent, vict, action)
+			Logbook.add_pending_2ents(ent, vict, action)
 			return true
 
 		return false
@@ -168,62 +172,14 @@ class TemporaryState:
 		if state[vict].alive > 0:
 			state[vict].alive -= 1
 			state[vict].available -= 1
-			Global.logbook.add_pending_2ents(ent, vict, action)
+			Logbook.add_pending_2ents(ent, vict, action)
 		pass
 	
 	func die(ent: Entity):
 		assert(state[ent].alive > 0)
 		state[ent].alive -= 1
 		state[ent].available -= 1
-		Global.logbook.pending_entries["%s_death" % ent.name()] = Logbook.CountedEntityEntry.new("{count} {counted} died", {"counted": ent})
-
-class Logbook:
-	var entries: Array[String]
-	var pending_entries: Dictionary[String, Entry]
-	
-	class Entry:
-		var template: String
-		var params: Dictionary
-		func _init(t: String, p: Dictionary):
-			self.template = t
-			self.params = p
-		func format() -> String:
-			return template.format(params)
-
-	class CountedEntityEntry extends Entry:
-		func _init(t: String, p: Dictionary):
-			if !"count" in p:
-				p.count = 1
-			super (t, p)
-		func format() -> String:
-			params.counted = params.counted.display_name(params.count > 1)
-			return super ()
-
-
-	func add_pending_2ents(victimizer: Entity, victim: Entity, action: String):
-		add_pending("%s_%s" % [victimizer.name(), victim.name()], \
-			CountedEntityEntry.new("{victimizer} {action} {count} {counted}", {
-				"victimizer": victimizer.display_name(true).capitalize(),
-				"action": action,
-				"counted": victim,
-			}))
-
-	func add_pending(id: String, entry: Entry):
-		if id in pending_entries:
-			var params = pending_entries[id].params
-			if "count" in params:
-				params["count"] += 1
-		else:
-			pending_entries[id] = entry
-
-	func add_log(entry: String):
-		print(entry)
-		entries.append(entry)
-
-	func process_pending():
-		for entry in pending_entries.values():
-			add_log(entry.format())
-		pending_entries.clear()
+		Logbook.pending_entries["%s_death" % ent.name()] = Logbook.CountedEntityEntry.new("{count} {counted} died", {"counted": ent})
 
 class EntityTemporaryState:
 	var alive: int
@@ -237,8 +193,6 @@ func _process(_delta):
 
 func reset():
 	_ready()
-	cycle_number = 0
-	victory_condition_met_count = 0
 
 
 func sub_dicts(a: Dictionary[String, int], b: Dictionary[String, int]) -> Dictionary[String, int]:

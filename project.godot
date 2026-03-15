@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 [autoload]
 
 Global="*uid://boqie35slq7f5"
+Logbook="*uid://cm6bidum58xdx"
 
 [display]
 
