@@ -13,7 +13,7 @@ func crate_quantity() -> Array:
 	return [1, 2, 3]
 
 func texture() -> CompressedTexture2D:
-	return load("res://art/sprites/entities/" + name() +".png")
+	return load("res://art/sprites/entities/" + name() + ".png")
 
 func reproduction_stats() -> ReproductionStats:
 	return ReproductionStats.init(1, -1, 0)
@@ -29,10 +29,15 @@ class ReproductionStats:
 		stats.frequency = f
 		stats.minimum_count = c
 		return stats
-		
 
 	func apply(initial: int, cycle: int) -> int:
 		if initial < minimum_count or cycle % frequency != 0:
 			return initial
 
-		return floorf(initial * multiplier) as int
+		var growth = initial * multiplier
+		var population = floorf(growth) as int
+
+		if randf_range(0.0, 1.0) <= (growth - population):
+			population += 1
+
+		return population
