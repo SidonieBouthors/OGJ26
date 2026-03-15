@@ -14,7 +14,7 @@ func display_name(plural: bool):
 	return super(plural) if plural else "bear"
 
 func crate_quantity() -> Array:
-	return [1]
+	return [1, 2]
 
 func texture() -> CompressedTexture2D:
 	return preload("res://art/sprites/entities/bear.png")
