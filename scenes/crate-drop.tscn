@@ -32,6 +32,7 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=1748055092]
 layout_mode = 2
+theme_override_constants/separation = 70
 alignment = 1
 
 [node name="Crate1" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=516485465 instance=ExtResource("2_2lly3")]

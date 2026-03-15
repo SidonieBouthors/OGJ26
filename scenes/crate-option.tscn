@@ -7,30 +7,34 @@
 [ext_resource type="Texture2D" uid="uid://bclshr4ckwc7i" path="res://art/sprites/entities/bear.png" id="4_ahu6h"]
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" unique_id=1384516715]
-custom_minimum_size = Vector2(512, 512)
+offset_right = 384.0
+offset_bottom = 384.0
 scale = Vector2(4, 4)
 mouse_default_cursor_shape = 3
 theme = ExtResource("1_a5mml")
 script = ExtResource("2_un1qn")
 
 [node name="Button" type="TextureButton" parent="." unique_id=160277249]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_un1qn")
 stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1081932833]
+texture_filter = 1
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 192
-theme_override_constants/margin_top = 192
-theme_override_constants/margin_right = 192
-theme_override_constants/margin_bottom = 192
+theme_override_constants/margin_left = 140
+theme_override_constants/margin_top = 140
+theme_override_constants/margin_right = 140
+theme_override_constants/margin_bottom = 140
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=1443092375]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("4_ahu6h")
+stretch_mode = 4
 
 [node name="Control" type="Control" parent="." unique_id=1222989894]
 layout_mode = 2
@@ -42,10 +46,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -93.0
-offset_top = -68.25
-offset_right = 50.75
-offset_bottom = 80.75
+offset_left = -98.25
+offset_top = -48.25
+offset_right = 45.5
+offset_bottom = 100.75
 grow_horizontal = 0
 texture = ExtResource("2_a5mml")
 region_rect = Rect2(0, 0, 128, 128)
