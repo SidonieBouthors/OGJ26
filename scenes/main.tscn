@@ -192,7 +192,6 @@ visible = false
 
 [node name="Victory" parent="." unique_id=2047150554 instance=ExtResource("16_jbj1t")]
 
-[connection signal="disable_next_button" from="CanvasLayer/CenterContainer/Summary" to="." method="_on_summary_toggle_next_button"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer1/NextStateButton" to="." method="_on_next_state_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer2/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="chose_crate" from="CrateDrop" to="." method="_on_crate_chosen"]
