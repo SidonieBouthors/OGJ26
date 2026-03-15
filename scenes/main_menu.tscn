@@ -3,12 +3,152 @@
 [ext_resource type="Theme" uid="uid://bijpnnm6o83ek" path="res://art/theme.tres" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://dxrpjffe8ds12" path="res://scripts/main_menu.gd" id="2_ekxnf"]
 [ext_resource type="Theme" uid="uid://cpxsxdgetgvil" path="res://art/wooden_theme.tres" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://c86km03c8417n" path="res://art/sprites/title-allframes-horizontal.png" id="3_wu84c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ln24"]
+atlas = ExtResource("3_wu84c")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtw2f"]
+atlas = ExtResource("3_wu84c")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa1go"]
+atlas = ExtResource("3_wu84c")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbmy8"]
+atlas = ExtResource("3_wu84c")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk1qb"]
+atlas = ExtResource("3_wu84c")
+region = Rect2(7680, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dd4i"]
+atlas = ExtResource("3_wu84c")
+region = Rect2(9600, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgwnu"]
+atlas = ExtResource("3_wu84c")
+region = Rect2(11520, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flqon"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ln24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtw2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa1go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbmy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk1qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dd4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgwnu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wu84c"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.5647059, 0.39215687, 0.28235295, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.38039216, 0.2627451, 0.18431373, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0.48137805, 0.3320306, 0.2369913, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.2711756, 0.18303989, 0.12428273, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
+bg_color = Color(0.66097885, 0.4616239, 0.33476165, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.4480315, 0.31210768, 0.22149174, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa1go"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 5
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ln24"]
 
-[node name="PanelContainer" type="PanelContainer" unique_id=2093992530]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
+bg_color = Color(0.36, 0.24900001, 0.18, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.18, 0.12384001, 0.08640001, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Menu" type="Control" unique_id=754320357]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -17,59 +157,65 @@ grow_vertical = 2
 theme = ExtResource("1_l6cm7")
 script = ExtResource("2_ekxnf")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=73137181]
-layout_mode = 2
-theme_override_constants/margin_left = 600
-theme_override_constants/margin_right = 600
+[node name="Background" type="AnimatedSprite2D" parent="." unique_id=286974152]
+sprite_frames = SubResource("SpriteFrames_flqon")
+autoplay = "default"
+centered = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2132708029]
-layout_mode = 2
-theme_override_constants/separation = 100
-alignment = 1
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1926863142]
+layout_mode = 0
+offset_left = 635.0
+offset_top = 16.0
+offset_right = 1285.0
+offset_bottom = 1106.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_top = 600
 
-[node name="TitlePanel" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=734137896]
-custom_minimum_size = Vector2(0, 280)
-layout_mode = 2
-theme = ExtResource("3_bqqt6")
-
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/TitlePanel" unique_id=456545859]
-custom_minimum_size = Vector2(280, 0)
-layout_mode = 2
-text = "This is a cool game"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1926863142]
-layout_mode = 2
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_bottom = 0
-
-[node name="ButtonsContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1082041776]
+[node name="ButtonsContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1082041776]
 layout_mode = 2
 theme_override_constants/separation = 70
 
-[node name="PlayButtonPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer" unique_id=1947656398]
+[node name="PlayButtonPanel" type="PanelContainer" parent="MarginContainer/ButtonsContainer" unique_id=1947656398]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_wu84c")
 
-[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer/PlayButtonPanel" unique_id=1994384587]
+[node name="PlayButton" type="Button" parent="MarginContainer/ButtonsContainer/PlayButtonPanel" unique_id=1994384587]
+custom_minimum_size = Vector2(450, 160)
 layout_mode = 2
+focus_neighbor_top = NodePath("../../QuitButtonPanel/QuitButton")
+focus_neighbor_bottom = NodePath("../../QuitButtonPanel/QuitButton")
+focus_next = NodePath("../../QuitButtonPanel/QuitButton")
+focus_previous = NodePath("../../QuitButtonPanel/QuitButton")
 theme = ExtResource("3_bqqt6")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8ln24")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oa1go")
 text = "Play"
 
-[node name="QuitButtonPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer" unique_id=538205646]
+[node name="QuitButtonPanel" type="PanelContainer" parent="MarginContainer/ButtonsContainer" unique_id=538205646]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_8ln24")
 
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer/QuitButtonPanel" unique_id=745993769]
+[node name="QuitButton" type="Button" parent="MarginContainer/ButtonsContainer/QuitButtonPanel" unique_id=745993769]
+custom_minimum_size = Vector2(450, 160)
 layout_mode = 2
+focus_neighbor_top = NodePath("../../PlayButtonPanel/PlayButton")
+focus_neighbor_bottom = NodePath("../../PlayButtonPanel/PlayButton")
+focus_next = NodePath("../../PlayButtonPanel/PlayButton")
+focus_previous = NodePath("../../PlayButtonPanel/PlayButton")
 theme = ExtResource("3_bqqt6")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8ln24")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oa1go")
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer/PlayButtonPanel/PlayButton" to="." method="on_play"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer/QuitButtonPanel/QuitButton" to="." method="on_quit"]
+[connection signal="pressed" from="MarginContainer/ButtonsContainer/PlayButtonPanel/PlayButton" to="." method="on_play"]
+[connection signal="pressed" from="MarginContainer/ButtonsContainer/QuitButtonPanel/QuitButton" to="." method="on_quit"]
