@@ -20,7 +20,7 @@ func _ready():
 func next_cycle():
 	Global.reproduce()
 	animate()
-	await get_tree().create_timer(0.1).timeout
+	#await get_tree().create_timer(2.0).timeout
 	Global.apply_constraints()
 	animate()
 	$NextStateButton.disabled = false
