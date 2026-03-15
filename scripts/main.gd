@@ -45,13 +45,6 @@ func animate() -> void:
 				var removed_pos : Vector2i = current_entity_positions.pop_back()
 				$Entities.erase_cell(removed_pos)
 				available_positions.append(removed_pos)
-				
-				#DEBUG
-		var num_tiles = $Entities.get_used_cells_by_id(NAME_TO_ID[species]).size()
-		var actual = Global.state[species]
-		if actual != num_tiles:
-			print("number of tiles with ", species,": ", num_tiles, ". Expected: ", actual )
-			#END DEBUG
 			
 	prev_state = Global.state.duplicate()
 	$Counter/EntityCountPanel.update()

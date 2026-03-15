@@ -87,11 +87,7 @@ func reproduce():
 		for species in ideal_increase:
 			ideal_increase[species] = max((floorf(ideal_increase[species] * ratio) as int) -1, 0)
 		ideal_state = add_dicts(state, ideal_increase)
-		
-		print("actual count_total:", count_total(ideal_state))
-		#DEBUG
-		if count_total(ideal_state) > 200:
-			pass
+
 	state = ideal_state
 
 
