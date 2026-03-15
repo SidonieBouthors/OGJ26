@@ -21,6 +21,10 @@ func _ready():
 	
 	Global.victory.connect(func(): $Victory.visible = true)
 
+func _process(_delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
 func next_cycle():
 	Global.reproduce()
 	animate()
@@ -84,11 +88,4 @@ func _on_next_state_button_pressed():
 
 
 func _on_restart_button_pressed():
-	Global.reset()
 	get_tree().reload_current_scene()
-
-func _on_quit():
-	get_tree().quit()
-
-func _on_back():
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
