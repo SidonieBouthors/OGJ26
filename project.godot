@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="OGJ26"
-run/main_scene="uid://b62bvjtimyojt"
+config/name="Crate Away"
+run/main_scene="uid://cv7eh8qaeh1xc"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [autoload]

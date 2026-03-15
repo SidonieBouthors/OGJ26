@@ -34,12 +34,6 @@ var victory_condition_met_count = 0
 var max_entities: int
 
 func _ready() -> void:
-	#state["parrot"] = 10
-	#state["coconut_tree"] = 10
-	#state["berries_bush"] = 10
-	#state["bear"] = 3
-	#state["beaver"] = 4
-	#state["ocelot"] = 6
 	state["parrot"] = 3
 	state["coconut_tree"] = 3
 	state["berries_bush"] = 4
@@ -122,7 +116,7 @@ func check_victory() -> bool:
 	else:
 		victory_condition_met_count = 0
 
-	if victory_condition_met_count >= 3:
+	if victory_condition_met_count >= 1:
 		victory.emit()
 		return true
 	return false
