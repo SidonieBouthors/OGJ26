@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://q1rcrwv7lwrw" path="res://scripts/crate_drop.gd" id="1_04eg4"]
 [ext_resource type="Theme" uid="uid://bijpnnm6o83ek" path="res://art/theme.tres" id="1_c3uvn"]
 [ext_resource type="PackedScene" uid="uid://dkeicxn83cmom" path="res://scenes/crate-option.tscn" id="2_2lly3"]
-[ext_resource type="Theme" uid="uid://cpxsxdgetgvil" path="res://art/special_button.tres" id="4_04eg4"]
+[ext_resource type="Theme" uid="uid://cpxsxdgetgvil" path="res://art/wooden_theme.tres" id="4_04eg4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rlvl0"]
 

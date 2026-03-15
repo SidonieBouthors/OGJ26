@@ -2,6 +2,11 @@
 
 [ext_resource type="Theme" uid="uid://bijpnnm6o83ek" path="res://art/theme.tres" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://dxrpjffe8ds12" path="res://scripts/main_menu.gd" id="2_ekxnf"]
+[ext_resource type="Theme" uid="uid://cpxsxdgetgvil" path="res://art/wooden_theme.tres" id="3_bqqt6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wu84c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ln24"]
 
 [node name="PanelContainer" type="PanelContainer" unique_id=2093992530]
 anchors_preset = 15
@@ -25,10 +30,12 @@ alignment = 1
 [node name="TitlePanel" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=734137896]
 custom_minimum_size = Vector2(0, 280)
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer/TitlePanel" unique_id=456545859]
+custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
-text = "On a pas de nom encore"
+text = "This is a cool game"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -45,17 +52,23 @@ theme_override_constants/separation = 70
 [node name="PlayButtonPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer" unique_id=1947656398]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wu84c")
 
 [node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer/PlayButtonPanel" unique_id=1994384587]
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 64
 text = "Play"
 
 [node name="QuitButtonPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer" unique_id=538205646]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8ln24")
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer/QuitButtonPanel" unique_id=745993769]
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 64
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/ButtonsContainer/PlayButtonPanel/PlayButton" to="." method="on_play"]
