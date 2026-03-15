@@ -2,12 +2,14 @@ extends Entity
 class_name Beaver
 
 func update_state(state: State.TemporaryState, _cycle: int):
-	if randi() % 2 == 0 and !state.require_destruct(State.COCONUT_TREE.name()):
-		state.destruct(name())
+	if randi() % 2 == 0 and !state.require_destruct(self, State.COCONUT_TREE, "ate"):
+		state.die(self)
 	pass
 
 func name() -> String:
 	return "beaver"
+func display_name(plural: bool):
+	return super(plural) if plural else "beaver"
 
 func crate_quantity() -> Array:
 	return [1, 2, 3]
