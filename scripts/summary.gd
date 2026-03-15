@@ -47,6 +47,8 @@ func _on_cycle():
 			to_show = true
 		else:
 			print("animation id not found: ", id)
+
+	SoundManager.play_sound()
 	Logbook.entries.clear()
 
 	if to_show:
