@@ -15,12 +15,6 @@ func _ready():
 			available_positions.erase(new_pos)
 			$Entities.set_cell(new_pos, NAME_TO_ID[species], Vector2i(0, 0))
 	prev_state = Global.state.duplicate()
-	
-
-func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		print("next cycle")
-		next_cycle()
 
 func next_cycle():
 	Global.reproduce()
@@ -28,12 +22,12 @@ func next_cycle():
 	await get_tree().create_timer(2.0).timeout
 	Global.apply_constraints()
 	animate()
+	$NextStateButton.disabled = false
 	if Global.cycle_number % 5 == 1:
 		spawn_crate()
 
 
 func animate() -> void:
-	print("animating")
 	for species : String in Global.state:
 		var prev_count : int = prev_state[species]
 		var diff = Global.state[species] - prev_count
@@ -74,3 +68,8 @@ func spawn_crate():
 func _on_crate_chosen(species, quantity):
 	Global.state[species] = Global.state[species] + quantity
 	animate()
+
+
+func _on_next_state_button_pressed():
+	$NextStateButton.disabled = true
+	next_cycle()
