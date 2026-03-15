@@ -19,4 +19,4 @@ func texture() -> CompressedTexture2D:
 	return preload("res://art/sprites/entities/coconut_tree.png")
 
 func reproduction_stats() -> ReproductionStats:
-	return ReproductionStats.init(randf_range(1.2, 1.4), 1, 1)
+	return ReproductionStats.init(randf_range(1.0, 1.1), 1, 1)
