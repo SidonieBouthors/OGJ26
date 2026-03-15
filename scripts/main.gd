@@ -24,7 +24,7 @@ func next_cycle():
 	Global.apply_constraints()
 	animate()
 	$NextStateButton.disabled = false
-	if Global.cycle_number % 5 == 1:
+	if Global.cycle_number % 3 == 1:
 		spawn_crate()
 
 
@@ -60,16 +60,16 @@ func find_crate_quantity(species: String) -> int:
 	var entity = Global.entities[species]
 	return entity.crate_quantity().pick_random()
 
-func spawn_crate():
-	var species1 : String = Global.state.keys().pick_random()
-	var species2 : String = Global.state.keys().pick_random()
-	while species2 == species1:
-		species2 = Global.state.keys().pick_random()
-		
-	var n1 = find_crate_quantity(species1)
-	var n2 = find_crate_quantity(species2)
-	$CrateDrop.set_crate_species(species1, species2)
-	$CrateDrop.set_quantities(n1, n2)
+func spawn_crate(num_options: int = 3):
+	var species_list : Array[String] = []
+	var quantities: Array[int] = []
+	for i in range(num_options):
+		var new_species = Global.state.keys().pick_random()
+		while (new_species in species_list):
+			new_species = Global.state.keys().pick_random()
+		species_list.append(new_species)
+		quantities.append(find_crate_quantity(new_species))
+	$CrateDrop.set_crates([species_list, quantities] as Array[Array])
 	$CrateDrop.visible = true
 	get_tree().paused = true
 

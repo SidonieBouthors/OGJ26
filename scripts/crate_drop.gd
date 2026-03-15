@@ -1,7 +1,8 @@
 extends CanvasLayer
 
-@onready var crate1: Crate = $CenterContainer/PanelContainer/MarginContainer/HBoxContainer/Crate1
-@onready var crate2: Crate = $CenterContainer/PanelContainer/MarginContainer/HBoxContainer/Crate2
+@onready var container = $CenterContainer/PanelContainer/MarginContainer/HBoxContainer
+
+var crate_option = preload("res://scenes/crate-option.tscn")
 
 signal chose_crate(species: String, quantity: int)
 
@@ -10,13 +11,16 @@ func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		close()
 
-func set_crate_species(species1: String, species2: String):
-	crate1.set_species(species1)
-	crate2.set_species(species2)
-
-func set_quantities(n1: int, n2: int):
-	crate1.set_quantity(n1)
-	crate2.set_quantity(n2)
+func set_crates(contents: Array[Array]):
+	container.get_children().map(func (crate): crate.queue_free())
+	var species_list : Array = contents[0]
+	var quantities : Array = contents[1]
+	for i in range(species_list.size()):
+		var crate : Crate = crate_option.instantiate()
+		container.add_child(crate)
+		crate.chose_crate.connect(_on_crate_chosen)
+		crate.set_species(species_list[i])
+		crate.set_quantity(quantities[i])
 
 
 func _on_crate_chosen(species: String, quantity: int):
