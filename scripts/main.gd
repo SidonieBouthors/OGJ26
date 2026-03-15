@@ -8,6 +8,7 @@ var prev_state: Dictionary[String, int]
 
 func _ready():
 	Global.reset()
+	%CycleCounter.update_counter()
 	Global.max_entities = ISLAND_CELLS.size()
 	available_positions = ISLAND_CELLS.duplicate()
 	$Entities.clear()
@@ -27,10 +28,9 @@ func _process(_delta):
 
 func next_cycle():
 	Global.reproduce()
-	animate()
-	#await get_tree().create_timer(2.0).timeout
 	Global.apply_constraints()
 	animate()
+	%CycleCounter.update_counter()
 	$CanvasLayer/MarginContainer1/NextStateButton.disabled = false
 	if Global.cycle_number % 3 == 1:
 		spawn_crate()
