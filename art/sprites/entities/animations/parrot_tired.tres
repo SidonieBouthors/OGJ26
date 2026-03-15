@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://b41wusq4c645v"]
+
+[ext_resource type="Texture2D" uid="uid://cpq1gt7auht3s" path="res://art/sprites/entities/animations/parrot_tired.png" id="1_5cleu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejbel"]
+atlas = ExtResource("1_5cleu")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idxq7"]
+atlas = ExtResource("1_5cleu")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl0pp"]
+atlas = ExtResource("1_5cleu")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4ctx"]
+atlas = ExtResource("1_5cleu")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qw11"]
+atlas = ExtResource("1_5cleu")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cf0m"]
+atlas = ExtResource("1_5cleu")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7gpa"]
+atlas = ExtResource("1_5cleu")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnw0q"]
+atlas = ExtResource("1_5cleu")
+region = Rect2(384, 128, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejbel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idxq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl0pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4ctx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qw11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cf0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7gpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnw0q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

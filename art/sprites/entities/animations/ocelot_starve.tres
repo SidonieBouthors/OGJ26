@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://doncgpcm0e6lm"]
+
+[ext_resource type="Texture2D" uid="uid://b8yvxugsysrwm" path="res://art/sprites/entities/animations/ocelot_starve.png" id="1_v64es"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v64es"]
+atlas = ExtResource("1_v64es")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w728"]
+atlas = ExtResource("1_v64es")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcf1w"]
+atlas = ExtResource("1_v64es")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vs0v"]
+atlas = ExtResource("1_v64es")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fug2n"]
+atlas = ExtResource("1_v64es")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px2du"]
+atlas = ExtResource("1_v64es")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy1h4"]
+atlas = ExtResource("1_v64es")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb1q5"]
+atlas = ExtResource("1_v64es")
+region = Rect2(384, 128, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v64es")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4w728")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcf1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vs0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fug2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px2du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy1h4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pb1q5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dncpodjtp6pms" path="res://art/sprites/arrow.png" id="13_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://bg73r2yp62nw1" path="res://scenes/crate-drop.tscn" id="13_trceg"]
 [ext_resource type="Script" uid="uid://d2j4k8ylg8ucl" path="res://scenes/entity-count-panel.gd" id="15_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://dle8damf8qkif" path="res://scenes/summary.tscn" id="15_jkv2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dp3eg"]
 texture = ExtResource("2_tipki")
@@ -98,6 +99,18 @@ tile_map_data = PackedByteArray("AAALAAYAAQAAAAAAAAAQAAgAAQAAAAAAAAAUAAYAAQAAAAA
 tile_set = SubResource("TileSet_o6xl0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1001416748]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=959495727]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Summary" parent="CanvasLayer/CenterContainer" unique_id=1009397328 instance=ExtResource("15_jkv2x")]
+process_mode = 3
+visible = false
+layout_mode = 2
 
 [node name="EntityCountPanel" type="PanelContainer" parent="CanvasLayer" unique_id=1270643849]
 anchors_preset = 6

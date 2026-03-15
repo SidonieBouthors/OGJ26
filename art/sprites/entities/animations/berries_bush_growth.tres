@@ -1,0 +1,74 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://clkh45gkkgpdg"]
+
+[ext_resource type="Texture2D" uid="uid://3pp8kpamlrnw" path="res://art/sprites/entities/animations/berries_bush_growth.png" id="1_b2l0b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0htx"]
+atlas = ExtResource("1_b2l0b")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thywh"]
+atlas = ExtResource("1_b2l0b")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngvuu"]
+atlas = ExtResource("1_b2l0b")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a8ov"]
+atlas = ExtResource("1_b2l0b")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4y0x"]
+atlas = ExtResource("1_b2l0b")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydm84"]
+atlas = ExtResource("1_b2l0b")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onare"]
+atlas = ExtResource("1_b2l0b")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvvat"]
+atlas = ExtResource("1_b2l0b")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u88am"]
+atlas = ExtResource("1_b2l0b")
+region = Rect2(256, 256, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0htx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thywh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngvuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a8ov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4y0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydm84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onare")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvvat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u88am")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

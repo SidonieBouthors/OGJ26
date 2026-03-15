@@ -2,7 +2,7 @@ extends Entity
 class_name Beaver
 
 func update_state(state: State.TemporaryState, _cycle: int):
-	if randi() % 2 == 0 and !state.require_destruct(self, State.COCONUT_TREE, "ate"):
+	if randi() % 2 == 0 and !state.require_destruct(self, State.COCONUT_TREE):
 		state.die(self)
 	pass
 

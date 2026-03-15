@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://dle8damf8qkif"]
+
+[ext_resource type="Theme" uid="uid://cpxsxdgetgvil" path="res://art/wooden_theme.tres" id="1_iqsvq"]
+[ext_resource type="PackedScene" uid="uid://rv11jg5nyasl" path="res://scenes/summary_entry.tscn" id="1_v0kee"]
+[ext_resource type="Script" uid="uid://cmne7ptodl8eq" path="res://scripts/summary.gd" id="2_7x5ch"]
+[ext_resource type="SpriteFrames" uid="uid://cguohs5d1auwc" path="res://art/sprites/entities/animations/beaver_coconut_tree.tres" id="3_yv4wi"]
+
+[node name="Summary" type="PanelContainer" unique_id=1009397328]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -64.0
+offset_right = 130.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iqsvq")
+script = ExtResource("2_7x5ch")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2086026467]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=761161980]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=617227149]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1734277436]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Cycle Summary"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1937847865]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1256623384]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+text = "X"
+
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=990086822]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 4
+
+[node name="SummaryEntry" parent="MarginContainer/VBoxContainer/Grid" unique_id=1751845195 instance=ExtResource("1_v0kee")]
+layout_mode = 2
+amount = 8
+sprite_frames = ExtResource("3_yv4wi")
+
+[node name="SummaryEntry2" parent="MarginContainer/VBoxContainer/Grid" unique_id=1819097700 instance=ExtResource("1_v0kee")]
+layout_mode = 2
+amount = 8
+sprite_frames = ExtResource("3_yv4wi")
+
+[node name="SummaryEntry3" parent="MarginContainer/VBoxContainer/Grid" unique_id=318743010 instance=ExtResource("1_v0kee")]
+layout_mode = 2
+amount = 8
+sprite_frames = ExtResource("3_yv4wi")
+
+[node name="SummaryEntry4" parent="MarginContainer/VBoxContainer/Grid" unique_id=2121849691 instance=ExtResource("1_v0kee")]
+layout_mode = 2
+amount = 8
+sprite_frames = ExtResource("3_yv4wi")
+
+[node name="SummaryEntry5" parent="MarginContainer/VBoxContainer/Grid" unique_id=926572508 instance=ExtResource("1_v0kee")]
+layout_mode = 2
+amount = 8
+sprite_frames = ExtResource("3_yv4wi")
+
+[node name="SummaryEntry6" parent="MarginContainer/VBoxContainer/Grid" unique_id=1912880955 instance=ExtResource("1_v0kee")]
+layout_mode = 2
+amount = 8
+sprite_frames = ExtResource("3_yv4wi")
+
+[node name="SummaryEntry7" parent="MarginContainer/VBoxContainer/Grid" unique_id=454002070 instance=ExtResource("1_v0kee")]
+layout_mode = 2
+amount = 8
+sprite_frames = ExtResource("3_yv4wi")
+
+[node name="SummaryEntry8" parent="MarginContainer/VBoxContainer/Grid" unique_id=1218301068 instance=ExtResource("1_v0kee")]
+layout_mode = 2
+amount = 8
+sprite_frames = ExtResource("3_yv4wi")
+
+[node name="SummaryEntry9" parent="MarginContainer/VBoxContainer/Grid" unique_id=1594129365 instance=ExtResource("1_v0kee")]
+layout_mode = 2
+amount = 8
+sprite_frames = ExtResource("3_yv4wi")
+
+[node name="SummaryEntry10" parent="MarginContainer/VBoxContainer/Grid" unique_id=2081928266 instance=ExtResource("1_v0kee")]
+layout_mode = 2
+amount = 8
+sprite_frames = ExtResource("3_yv4wi")
+
+[node name="SummaryEntry11" parent="MarginContainer/VBoxContainer/Grid" unique_id=1910480294 instance=ExtResource("1_v0kee")]
+layout_mode = 2
+amount = 8
+sprite_frames = ExtResource("3_yv4wi")
+
+[node name="SummaryEntry12" parent="MarginContainer/VBoxContainer/Grid" unique_id=1187676357 instance=ExtResource("1_v0kee")]
+layout_mode = 2
+amount = 8
+sprite_frames = ExtResource("3_yv4wi")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_hide"]

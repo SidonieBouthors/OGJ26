@@ -3,8 +3,8 @@ class_name Bear
 
 func update_state(state: State.TemporaryState, _cycle: int):
 	if randi() % 2 == 0 \
-		and !state.require_destruct(self, State.BERRIES_BUSH, "ate") \
-		and !state.require_destruct(self, State.BEAVER, "ate"):
+		and !state.require_destruct(self, State.BERRIES_BUSH) \
+		and !state.require_destruct(self, State.BEAVER):
 		state.die(self)
 	pass
 

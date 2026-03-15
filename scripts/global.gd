@@ -2,6 +2,7 @@ extends Node
 class_name State
 
 signal victory
+signal cycle_done
 
 static var COCONUT_TREE = CoconutTree.new()
 static var BERRIES_BUSH = BerriesBush.new()
@@ -77,9 +78,7 @@ func apply_constraints():
 	, {} as Dictionary[String, int])
 
 
-	Logbook.add_log("Logs for cycle %d" % cycle_number)
-	Logbook.process_pending()
-
+	cycle_done.emit()
 	check_victory()
 	cycle_number += 1
 
@@ -97,12 +96,6 @@ func reproduce():
 		for species in ideal_increase:
 			var growth = max((floorf(ideal_increase[species] * ratio) as int) - 1, 0)
 			ideal_increase[species] = growth
-			Logbook.add_pending(
-				"%s_growth" % species,
-				Logbook.CountedEntityEntry.new(
-					"{count} {counted} were born",
-					 {"counted": entities[species]}
-			))
 
 		ideal_state = add_dicts(state, ideal_increase)
 
@@ -115,15 +108,7 @@ func reproduce():
 	
 	for e in ideal_state:
 		if ideal_state[e] > state[e]:
-			Logbook.add_pending(
-				"%s_growth" % e,
-				Logbook.CountedEntityEntry.new(
-					"{count} {counted} were born",
-					{
-						"counted": entities[e],
-						"count": ideal_state[e] - state[e]
-					}
-			))
+			Logbook.add("%s_growth" % e, ideal_state[e] - state[e])
 	
 	state = ideal_state
 
@@ -147,39 +132,39 @@ func check_victory():
 class TemporaryState:
 	var state: Dictionary[Entity, EntityTemporaryState]
 
-	func require_destruct(ent: Entity, vict: Entity, action: String) -> bool:
+	func require_destruct(ent: Entity, vict: Entity) -> bool:
 		if state[vict].available > 0:
 			assert(state[vict].alive > 0)
 
 			state[vict].available -= 1
 			state[vict].alive -= 1
 			
-			Logbook.add_pending_2ents(ent, vict, action)
+			Logbook.add_2ents(ent, vict)
 
 			return true
 
 		return false
 
-	func require(ent: Entity, vict: Entity, action: String) -> bool:
+	func require(ent: Entity, vict: Entity) -> bool:
 		if state[vict].available > 0:
 			state[vict].available -= 1
-			Logbook.add_pending_2ents(ent, vict, action)
+			Logbook.add_2ents(ent, vict)
 			return true
 
 		return false
 
-	func destruct(ent: Entity, vict: Entity, action: String):
+	func destruct(ent: Entity, vict: Entity):
 		if state[vict].alive > 0:
 			state[vict].alive -= 1
 			state[vict].available -= 1
-			Logbook.add_pending_2ents(ent, vict, action)
+			Logbook.add_2ents(ent, vict)
 		pass
 	
-	func die(ent: Entity):
-		assert(state[ent].alive > 0)
-		state[ent].alive -= 1
-		state[ent].available -= 1
-		Logbook.pending_entries["%s_death" % ent.name()] = Logbook.CountedEntityEntry.new("{count} {counted} died", {"counted": ent})
+	func die(ent: Entity, cause: String = "starve"):
+		if state[ent].alive > 0:
+			state[ent].alive -= 1
+			state[ent].available -= 1
+			Logbook.add("%s_%s" % [ent.name(), cause], 1)
 
 class EntityTemporaryState:
 	var alive: int

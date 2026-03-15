@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bxnyif81cjjnx"]
+
+[ext_resource type="Texture2D" uid="uid://dxiclpjnlx2eq" path="res://art/sprites/entities/animations/parrot_starve.png" id="1_ilf20"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8d02"]
+atlas = ExtResource("1_ilf20")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ruvv"]
+atlas = ExtResource("1_ilf20")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge6cj"]
+atlas = ExtResource("1_ilf20")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr1c3"]
+atlas = ExtResource("1_ilf20")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k0df"]
+atlas = ExtResource("1_ilf20")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twug2"]
+atlas = ExtResource("1_ilf20")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdvdy"]
+atlas = ExtResource("1_ilf20")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81njw"]
+atlas = ExtResource("1_ilf20")
+region = Rect2(384, 128, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8d02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ruvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ge6cj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hr1c3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1k0df")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twug2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdvdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81njw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

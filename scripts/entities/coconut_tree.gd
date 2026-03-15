@@ -3,7 +3,7 @@ class_name CoconutTree
 
 func update_state(state: State.TemporaryState, _cycle: int):
 	if randi() % 30 == 0:
-		state.destruct(self, State.BEAR, "smashed")
+		state.destruct(self, State.BEAR)
 	pass
 
 func name() -> String:

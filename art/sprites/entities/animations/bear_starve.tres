@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://druaen83fqiv7"]
+
+[ext_resource type="Texture2D" uid="uid://58d2kvdkkhqu" path="res://art/sprites/entities/animations/bear_starve.png" id="1_lr7to"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj1wq"]
+atlas = ExtResource("1_lr7to")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jfc7"]
+atlas = ExtResource("1_lr7to")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilvx7"]
+atlas = ExtResource("1_lr7to")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lxot"]
+atlas = ExtResource("1_lr7to")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqj4t"]
+atlas = ExtResource("1_lr7to")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh6yq"]
+atlas = ExtResource("1_lr7to")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ibs2"]
+atlas = ExtResource("1_lr7to")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ewkb"]
+atlas = ExtResource("1_lr7to")
+region = Rect2(384, 128, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj1wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jfc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilvx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lxot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqj4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh6yq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ibs2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ewkb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

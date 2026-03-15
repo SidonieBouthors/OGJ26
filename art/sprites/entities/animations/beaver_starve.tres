@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://d05g0hr7ijr2k"]
+
+[ext_resource type="Texture2D" uid="uid://dinaar1t38dxy" path="res://art/sprites/entities/animations/beaver_starve.png" id="1_2bogy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb8hl"]
+atlas = ExtResource("1_2bogy")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltimr"]
+atlas = ExtResource("1_2bogy")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gk2w"]
+atlas = ExtResource("1_2bogy")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t06p8"]
+atlas = ExtResource("1_2bogy")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdwq3"]
+atlas = ExtResource("1_2bogy")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40l45"]
+atlas = ExtResource("1_2bogy")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxsy4"]
+atlas = ExtResource("1_2bogy")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dse1a"]
+atlas = ExtResource("1_2bogy")
+region = Rect2(384, 128, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fb8hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltimr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gk2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t06p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdwq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40l45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxsy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dse1a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

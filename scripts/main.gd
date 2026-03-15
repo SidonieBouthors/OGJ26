@@ -73,7 +73,6 @@ func spawn_crate(num_options: int = 3):
 
 func _on_crate_chosen(species: String, quantity: int):
 	quantity = min(Global.max_entities - Global.count_total(), quantity)
-	Logbook.add_log("{0} {1} arrived by sea".format([quantity, Global.entities[species].display_name(quantity > 1)]))
 	Global.state[species] = Global.state[species] + quantity
 	animate()
 

@@ -2,7 +2,7 @@ extends Entity
 class_name Ocelot
 
 func update_state(state: State.TemporaryState, _cycle: int):
-	if randi() % 2 == 0 and !state.require_destruct(self, State.PARROT, "ate"):
+	if randi() % 2 == 0 and !state.require_destruct(self, State.PARROT):
 		state.die(self)
 
 func name() -> String:

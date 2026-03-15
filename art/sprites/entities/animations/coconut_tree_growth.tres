@@ -1,0 +1,74 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cr7ou2pafpl6j"]
+
+[ext_resource type="Texture2D" uid="uid://co8yqnlesgmpw" path="res://art/sprites/entities/animations/coconut_tree_growth.png" id="1_qhvea"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol6j0"]
+atlas = ExtResource("1_qhvea")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmpl5"]
+atlas = ExtResource("1_qhvea")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjqem"]
+atlas = ExtResource("1_qhvea")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqytg"]
+atlas = ExtResource("1_qhvea")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcvwk"]
+atlas = ExtResource("1_qhvea")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl4gf"]
+atlas = ExtResource("1_qhvea")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1bhf"]
+atlas = ExtResource("1_qhvea")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n813i"]
+atlas = ExtResource("1_qhvea")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoj2g"]
+atlas = ExtResource("1_qhvea")
+region = Rect2(256, 256, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol6j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmpl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjqem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqytg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcvwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl4gf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1bhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n813i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aoj2g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

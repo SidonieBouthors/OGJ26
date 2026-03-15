@@ -3,7 +3,7 @@ class_name BerriesBush
 
 func update_state(state: State.TemporaryState, _cycle: int):
 	if randi() % 10  == 0:
-		state.destruct(self, State.OCELOT, "poisoned")
+		state.destruct(self, State.OCELOT)
 	pass
 
 func name() -> String:
