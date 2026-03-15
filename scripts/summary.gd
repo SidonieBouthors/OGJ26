@@ -24,26 +24,33 @@ const SPRITE_FRAMES: Dictionary[String, SpriteFrames] = {
 	"parrot_tired": preload("res://art/sprites/entities/animations/parrot_tired.tres"),
 }
 
+var COLORS: Dictionary[Logbook.Entry.Category, Color] = {
+	Logbook.Entry.Category.Growth: Color.from_string("#25b700", Color.GREEN),
+	Logbook.Entry.Category.Death: Color.from_string("#d50000", Color.RED),
+	Logbook.Entry.Category.Neutral: Color.from_string("#ecd3ac", Color.WHITE),
+}
+
 func _ready():
 	Global.cycle_done.connect(_on_cycle)
 
 func _on_cycle():
 	%Grid.get_children().map(func(c): c.queue_free())
 	var to_show = false
-	
+
 	for id in Logbook.entries:
 		if id in SPRITE_FRAMES:
 			var entry = ENTRY_SCENE.instantiate()
-			entry.set_amount(Logbook.entries[id])
+			entry.set_amount(Logbook.entries[id].count)
+			entry.set_color(COLORS[Logbook.entries[id].category])
 			entry.set_sprite_frames(SPRITE_FRAMES[id])
 			%Grid.add_child(entry)
 			to_show = true
+		else:
+			print("animation id not found: ", id)
 	Logbook.entries.clear()
 
 	if to_show:
 		visible = true
-		get_tree().paused = true
 
 func _on_hide():
 	visible = false
-	get_tree().paused = false
