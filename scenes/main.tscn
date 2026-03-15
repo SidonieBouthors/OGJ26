@@ -1,18 +1,17 @@
 [gd_scene format=4 uid="uid://b62bvjtimyojt"]
 
 [ext_resource type="Script" uid="uid://bip62nq5eegtn" path="res://scripts/main.gd" id="1_sugp2"]
-[ext_resource type="Texture2D" uid="uid://bgow1vsq4bsl8" path="res://art/sprites/tiles/parrot.png" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://bgow1vsq4bsl8" path="res://art/sprites/entities/parrot.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://7oixrh2rum8u" path="res://art/sprites/tiles/island_tileset.png" id="2_tipki"]
 [ext_resource type="Texture2D" uid="uid://ubygkf3ow8jb" path="res://art/sprites/tiles/water_tileset.png" id="3_85g3d"]
-[ext_resource type="Texture2D" uid="uid://dn67qxku58nrb" path="res://art/sprites/tiles/berries_bush.png" id="5_85g3d"]
-[ext_resource type="Texture2D" uid="uid://daphve6b8alkr" path="res://art/sprites/tiles/beaver.png" id="6_choun"]
-[ext_resource type="Texture2D" uid="uid://bclshr4ckwc7i" path="res://art/sprites/tiles/bear.png" id="7_tipki"]
-[ext_resource type="Texture2D" uid="uid://by8x4hw5qxsca" path="res://art/sprites/tiles/coconut_tree.png" id="7_ya4ey"]
-[ext_resource type="Texture2D" uid="uid://ccrovlai4t2uf" path="res://art/sprites/tiles/ocelot.png" id="8_85g3d"]
+[ext_resource type="Texture2D" uid="uid://dn67qxku58nrb" path="res://art/sprites/entities/berries_bush.png" id="5_85g3d"]
+[ext_resource type="Texture2D" uid="uid://daphve6b8alkr" path="res://art/sprites/entities/beaver.png" id="6_choun"]
+[ext_resource type="Texture2D" uid="uid://bclshr4ckwc7i" path="res://art/sprites/entities/bear.png" id="7_tipki"]
+[ext_resource type="Texture2D" uid="uid://by8x4hw5qxsca" path="res://art/sprites/entities/coconut_tree.png" id="7_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://ccrovlai4t2uf" path="res://art/sprites/entities/ocelot.png" id="8_85g3d"]
 [ext_resource type="Theme" uid="uid://diy477wtgbery" path="res://art/count-panel-theme.tres" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://bg73r2yp62nw1" path="res://scenes/crate-drop.tscn" id="13_trceg"]
 [ext_resource type="Script" uid="uid://d2j4k8ylg8ucl" path="res://scenes/entity-count-panel.gd" id="15_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://c3hf2ftfdppyq" path="res://scenes/entity-count.tscn" id="15_jkv2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85g3d"]
 texture = ExtResource("2_tipki")
@@ -113,14 +112,6 @@ script = ExtResource("15_jbj1t")
 [node name="EntityCountVBox" type="VBoxContainer" parent="Counter/EntityCountPanel" unique_id=1845802853]
 unique_name_in_owner = true
 layout_mode = 2
-
-[node name="EntityCountDisplay" parent="Counter/EntityCountPanel/EntityCountVBox" unique_id=946961261 instance=ExtResource("15_jkv2x")]
-layout_mode = 2
-entity_texture = ExtResource("6_choun")
-
-[node name="MarginContainer2" parent="Counter/EntityCountPanel/EntityCountVBox" unique_id=2045080350 instance=ExtResource("15_jkv2x")]
-layout_mode = 2
-entity_texture = ExtResource("2_sugp2")
 
 [node name="CrateDrop" parent="." unique_id=1377215731 instance=ExtResource("13_trceg")]
 visible = false

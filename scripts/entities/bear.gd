@@ -12,5 +12,8 @@ func name() -> String:
 func crate_quantity() -> Array:
 	return [1]
 
+func texture() -> CompressedTexture2D:
+	return preload("res://art/sprites/entities/bear.png")
+
 func reproduction_stats() -> ReproductionStats:
 	return ReproductionStats.init(randf_range(1.3, 1.7), 1, 2)

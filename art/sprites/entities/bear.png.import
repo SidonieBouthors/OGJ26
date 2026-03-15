@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgow1vsq4bsl8"
-path="res://.godot/imported/parrot.png-e5ff7c030cb31d666f922232fad6fcd2.ctex"
+uid="uid://bclshr4ckwc7i"
+path="res://.godot/imported/bear.png-2ad23fd8aed817548585c262650030a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/tiles/parrot.png"
-dest_files=["res://.godot/imported/parrot.png-e5ff7c030cb31d666f922232fad6fcd2.ctex"]
+source_file="res://art/sprites/entities/bear.png"
+dest_files=["res://.godot/imported/bear.png-2ad23fd8aed817548585c262650030a9.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccrovlai4t2uf"
-path="res://.godot/imported/ocelot.png-83d40fcb1d80f741793895fd35c7df28.ctex"
+uid="uid://dn67qxku58nrb"
+path="res://.godot/imported/berries_bush.png-02fa603526115200f0a558d4b51f7c54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/tiles/ocelot.png"
-dest_files=["res://.godot/imported/ocelot.png-83d40fcb1d80f741793895fd35c7df28.ctex"]
+source_file="res://art/sprites/entities/berries_bush.png"
+dest_files=["res://.godot/imported/berries_bush.png-02fa603526115200f0a558d4b51f7c54.ctex"]
 
 [params]
 

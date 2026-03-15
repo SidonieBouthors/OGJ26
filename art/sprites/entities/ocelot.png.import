@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daphve6b8alkr"
-path="res://.godot/imported/beaver.png-e79c291c8068ddb696102dec4a5da526.ctex"
+uid="uid://ccrovlai4t2uf"
+path="res://.godot/imported/ocelot.png-1ae61765b5a50d90d16cbd1f9f1e9639.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/tiles/beaver.png"
-dest_files=["res://.godot/imported/beaver.png-e79c291c8068ddb696102dec4a5da526.ctex"]
+source_file="res://art/sprites/entities/ocelot.png"
+dest_files=["res://.godot/imported/ocelot.png-1ae61765b5a50d90d16cbd1f9f1e9639.ctex"]
 
 [params]
 

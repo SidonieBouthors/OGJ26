@@ -28,7 +28,7 @@ func next_cycle():
 	await get_tree().create_timer(2.0).timeout
 	Global.apply_constraints()
 	animate()
-	if Global.cycle_number % 5 == 0:
+	if Global.cycle_number % 5 == 1:
 		spawn_crate()
 
 
@@ -51,6 +51,7 @@ func animate() -> void:
 				$Entities.erase_cell(removed_pos)
 				available_positions.append(removed_pos)
 	prev_state = Global.state.duplicate()
+	$Counter/EntityCountPanel.update()
 
 func find_crate_quantity(species: String) -> int:
 	var entity = Global.entities[species]
@@ -70,5 +71,5 @@ func spawn_crate():
 
 
 func _on_crate_chosen(species, quantity):
-	Global.state[species] = Global.state[species] + 2
+	Global.state[species] = Global.state[species] + quantity
 	animate()

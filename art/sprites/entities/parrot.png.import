@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by8x4hw5qxsca"
-path="res://.godot/imported/coconut_tree.png-8ca7560d30739fe3ee1452657c13256d.ctex"
+uid="uid://bgow1vsq4bsl8"
+path="res://.godot/imported/parrot.png-41cdd09e3e921eb02bb99f3013f2d650.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/tiles/coconut_tree.png"
-dest_files=["res://.godot/imported/coconut_tree.png-8ca7560d30739fe3ee1452657c13256d.ctex"]
+source_file="res://art/sprites/entities/parrot.png"
+dest_files=["res://.godot/imported/parrot.png-41cdd09e3e921eb02bb99f3013f2d650.ctex"]
 
 [params]
 

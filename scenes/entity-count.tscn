@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c3hf2ftfdppyq"]
 
 [ext_resource type="Theme" uid="uid://diy477wtgbery" path="res://art/count-panel-theme.tres" id="1_ckqoe"]
-[ext_resource type="Texture2D" uid="uid://ccrovlai4t2uf" path="res://art/sprites/tiles/ocelot.png" id="1_ntxou"]
+[ext_resource type="Texture2D" uid="uid://ccrovlai4t2uf" path="res://art/sprites/entities/ocelot.png" id="1_ntxou"]
 [ext_resource type="Script" uid="uid://4y70tpx8tmr7" path="res://scenes/entity_count.gd" id="2_wi0um"]
 
 [node name="EntityCountDisplay" type="MarginContainer" unique_id=946961261]

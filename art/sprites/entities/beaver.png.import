@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db8s0q4mjjj3h"
-path="res://.godot/imported/crate.png-59115c34f9a9750f18f1a62512f8160f.ctex"
+uid="uid://daphve6b8alkr"
+path="res://.godot/imported/beaver.png-668a09ac6aab964f7d35281fa483a16b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/tiles/crate.png"
-dest_files=["res://.godot/imported/crate.png-59115c34f9a9750f18f1a62512f8160f.ctex"]
+source_file="res://art/sprites/entities/beaver.png"
+dest_files=["res://.godot/imported/beaver.png-668a09ac6aab964f7d35281fa483a16b.ctex"]
 
 [params]
 
