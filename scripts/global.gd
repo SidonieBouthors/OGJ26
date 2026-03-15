@@ -78,7 +78,6 @@ func apply_constraints():
 	, {} as Dictionary[String, int])
 
 
-	cycle_done.emit()
 	check_victory()
 	cycle_number += 1
 
@@ -100,7 +99,6 @@ func reproduce():
 		ideal_state = add_dicts(state, ideal_increase)
 
 		
-		print("actual count_total:", count_total(ideal_state))
 		#DEBUG
 		if count_total(ideal_state) > 200:
 			pass
@@ -119,14 +117,14 @@ func count_total(temp_state: Dictionary[String, int] = state) -> int:
 
 func check_victory():
 	if state.values().all(func(c): return c >= 1):
-		print("condition met")
 		victory_condition_met_count += 1
 	else:
 		victory_condition_met_count = 0
 
 	if victory_condition_met_count >= 3:
-		print("Victory!!!!")
 		victory.emit()
+	else:
+		cycle_done.emit()
 
 
 class TemporaryState:
