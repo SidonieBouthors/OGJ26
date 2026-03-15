@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bg73r2yp62nw1" path="res://scenes/crate-drop.tscn" id="13_trceg"]
 [ext_resource type="Script" uid="uid://d2j4k8ylg8ucl" path="res://scenes/entity-count-panel.gd" id="15_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://dle8damf8qkif" path="res://scenes/summary.tscn" id="15_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://bqyf4dpymh00s" path="res://scenes/victory.tscn" id="16_jbj1t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dp3eg"]
 texture = ExtResource("2_tipki")
@@ -172,68 +173,8 @@ process_mode = 3
 layer = 2
 visible = false
 
-[node name="Victory" type="CanvasLayer" parent="." unique_id=898608928]
-visible = false
-
-[node name="CenterContainer" type="CenterContainer" parent="Victory" unique_id=1318494047]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -200.0
-offset_right = 300.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("12_trceg")
-
-[node name="PanelContainer" type="PanelContainer" parent="Victory/CenterContainer" unique_id=75005023]
-custom_minimum_size = Vector2(600, 0)
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Victory/CenterContainer/PanelContainer" unique_id=1134591172]
-layout_mode = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Victory/CenterContainer/PanelContainer/MarginContainer" unique_id=970699966]
-layout_mode = 2
-theme_override_constants/separation = 30
-alignment = 1
-
-[node name="Label" type="Label" parent="Victory/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=463890595]
-layout_mode = 2
-theme_override_font_sizes/font_size = 90
-text = "Victory!"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Victory/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1744116346]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "The island is restored, good job matey :3"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Victory/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=798043229]
-layout_mode = 2
-theme_override_constants/separation = 30
-
-[node name="MenuButton" type="Button" parent="Victory/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1232221276]
-custom_minimum_size = Vector2(240, 80)
-layout_mode = 2
-text = "Main Menu"
-
-[node name="QuitButton" type="Button" parent="Victory/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=592197458]
-custom_minimum_size = Vector2(240, 80)
-layout_mode = 2
-text = "Quit"
+[node name="Victory" parent="." unique_id=2047150554 instance=ExtResource("16_jbj1t")]
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer1/NextStateButton" to="." method="_on_next_state_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer2/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="chose_crate" from="CrateDrop" to="." method="_on_crate_chosen"]
-[connection signal="pressed" from="Victory/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_back"]
-[connection signal="pressed" from="Victory/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit"]

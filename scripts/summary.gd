@@ -32,7 +32,6 @@ func _on_cycle():
 	var to_show = false
 	
 	for id in Logbook.entries:
-		print(id)
 		if id in SPRITE_FRAMES:
 			var entry = ENTRY_SCENE.instantiate()
 			entry.set_amount(Logbook.entries[id])
@@ -41,9 +40,7 @@ func _on_cycle():
 			to_show = true
 	Logbook.entries.clear()
 
-	print("fgzueshdijaokpx,ldjifguhntjjodkpvsclè")
 	if to_show:
-		print("showing")
 		visible = true
 		get_tree().paused = true
 

@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bqyf4dpymh00s"]
+
+[ext_resource type="Script" uid="uid://xrt4cwvl3ys6" path="res://scripts/victory.gd" id="1_faxov"]
+[ext_resource type="Theme" uid="uid://cpxsxdgetgvil" path="res://art/wooden_theme.tres" id="1_le47n"]
+
+[sub_resource type="Theme" id="Theme_a8y0u"]
+
+[node name="Victory" type="CanvasLayer" unique_id=2047150554]
+layer = 3
+visible = false
+script = ExtResource("1_faxov")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1816390867]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_le47n")
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=841832642]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme = SubResource("Theme_a8y0u")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1014391883]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=1789578597]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=584246247]
+layout_mode = 2
+theme_override_font_sizes/font_size = 90
+text = "Victory!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1893413530]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "The island is restored, good job matey :3"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1448890134]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="MenuButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1784397240]
+custom_minimum_size = Vector2(240, 80)
+layout_mode = 2
+text = "Main Menu"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=215868051]
+custom_minimum_size = Vector2(240, 80)
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_back"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit"]
