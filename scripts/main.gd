@@ -68,6 +68,7 @@ func spawn_crate():
 	$CrateDrop.set_crate_species(species1, species2)
 	$CrateDrop.set_quantities(n1, n2)
 	$CrateDrop.visible = true
+	get_tree().paused = true
 
 
 func _on_crate_chosen(species, quantity):
