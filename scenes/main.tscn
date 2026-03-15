@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ccrovlai4t2uf" path="res://art/sprites/entities/ocelot.png" id="8_85g3d"]
 [ext_resource type="Theme" uid="uid://diy477wtgbery" path="res://art/count-panel-theme.tres" id="10_choun"]
 [ext_resource type="Theme" uid="uid://cpxsxdgetgvil" path="res://art/special_button.tres" id="12_trceg"]
+[ext_resource type="Texture2D" uid="uid://dncpodjtp6pms" path="res://art/sprites/arrow.png" id="13_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://bg73r2yp62nw1" path="res://scenes/crate-drop.tscn" id="13_trceg"]
 [ext_resource type="Script" uid="uid://d2j4k8ylg8ucl" path="res://scenes/entity-count-panel.gd" id="15_jbj1t"]
 
@@ -96,15 +97,9 @@ tile_set = SubResource("TileSet_tbgi4")
 tile_map_data = PackedByteArray("AAALAAYAAQAAAAAAAAAQAAgAAQAAAAAAAAAUAAYAAQAAAAAAAAAPAAYAAQAAAAAAAAAKAAgAAAAAAAAAAAANAAoAAAAAAAAAAAARAAYAAgAAAAAAAAALAAIAAgAAAAAAAAARAAUAAgAAAAAAAAATAAkAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_o6xl0")
 
-[node name="Counter" type="Control" parent="." unique_id=1837543510]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-theme = ExtResource("10_choun")
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1001416748]
 
-[node name="EntityCountPanel" type="PanelContainer" parent="Counter" unique_id=1270643849]
-layout_mode = 1
+[node name="EntityCountPanel" type="PanelContainer" parent="CanvasLayer" unique_id=1270643849]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -115,24 +110,55 @@ offset_top = -159.5
 offset_bottom = 159.5
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("10_choun")
 script = ExtResource("15_jbj1t")
 
-[node name="EntityCountVBox" type="VBoxContainer" parent="Counter/EntityCountPanel" unique_id=1845802853]
+[node name="EntityCountVBox" type="VBoxContainer" parent="CanvasLayer/EntityCountPanel" unique_id=1845802853]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="NextStateButton" type="Button" parent="." unique_id=974839718]
+[node name="MarginContainer1" type="MarginContainer" parent="CanvasLayer" unique_id=982993164]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -152.0
+offset_right = 136.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="NextStateButton" type="Button" parent="CanvasLayer/MarginContainer1" unique_id=974839718]
 custom_minimum_size = Vector2(240, 120)
-offset_left = 777.0
-offset_top = 910.0
-offset_right = 1044.0
-offset_bottom = 1030.0
+layout_mode = 2
 theme = ExtResource("12_trceg")
 text = "Next State"
 
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer" unique_id=365949549]
+offset_right = 132.0
+offset_bottom = 132.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/MarginContainer2" unique_id=792658585]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("12_trceg")
+icon = ExtResource("13_a8y0u")
+icon_alignment = 1
+
 [node name="CrateDrop" parent="." unique_id=1377215731 instance=ExtResource("13_trceg")]
 process_mode = 3
+layer = 2
 visible = false
 
-[connection signal="pressed" from="NextStateButton" to="." method="_on_next_state_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer1/NextStateButton" to="." method="_on_next_state_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer2/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="chose_crate" from="CrateDrop" to="." method="_on_crate_chosen"]

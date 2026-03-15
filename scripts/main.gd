@@ -23,7 +23,7 @@ func next_cycle():
 	#await get_tree().create_timer(2.0).timeout
 	Global.apply_constraints()
 	animate()
-	$NextStateButton.disabled = false
+	$CanvasLayer/MarginContainer1/NextStateButton.disabled = false
 	if Global.cycle_number % 3 == 1:
 		spawn_crate()
 
@@ -47,7 +47,7 @@ func animate() -> void:
 				available_positions.append(removed_pos)
 			
 	prev_state = Global.state.duplicate()
-	$Counter/EntityCountPanel.update()
+	$CanvasLayer/EntityCountPanel.update()
 
 func find_crate_quantity(species: String) -> int:
 	var entity = Global.entities[species]
@@ -74,5 +74,10 @@ func _on_crate_chosen(species, quantity):
 
 
 func _on_next_state_button_pressed():
-	$NextStateButton.disabled = true
+	$CanvasLayer/MarginContainer1/NextStateButton.disabled = true
 	next_cycle()
+
+
+func _on_restart_button_pressed():
+	Global.reset()
+	get_tree().reload_current_scene()

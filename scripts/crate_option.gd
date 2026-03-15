@@ -12,7 +12,7 @@ func set_species(spe: String):
 
 func set_quantity(n: int):
 	quantity = n
-	$Control/NinePatchRect/Label.text = str(n)
+	$Control/NinePatchRect/Label.text = "x" + str(n)
 
 
 func _on_button_pressed():

@@ -143,6 +143,12 @@ func _process(_delta):
 		get_tree().quit()
 
 
+func reset():
+	_ready()
+	cycle_number = 0
+	victory_condition_met_count = 0
+
+
 func sub_dicts(a: Dictionary[String, int], b: Dictionary[String, int]) -> Dictionary[String, int]:
 	var result = a.duplicate()
 	for key in a:
