@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bg73r2yp62nw1" path="res://scenes/crate-drop.tscn" id="13_trceg"]
 [ext_resource type="Script" uid="uid://d2j4k8ylg8ucl" path="res://scenes/entity-count-panel.gd" id="15_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://dle8damf8qkif" path="res://scenes/summary.tscn" id="15_jkv2x"]
+[ext_resource type="Script" uid="uid://cswhgfevamvgm" path="res://scenes/counter.gd" id="15_muem4"]
 [ext_resource type="PackedScene" uid="uid://bqyf4dpymh00s" path="res://scenes/victory.tscn" id="16_jbj1t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dp3eg"]
@@ -161,12 +162,27 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="RestartButton" type="Button" parent="CanvasLayer/MarginContainer2" unique_id=792658585]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer2" unique_id=536031630]
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/MarginContainer2/HBoxContainer" unique_id=792658585]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("12_trceg")
 icon = ExtResource("13_a8y0u")
 icon_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer2/HBoxContainer" unique_id=1904502364]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer2/HBoxContainer/MarginContainer" unique_id=1677106569]
+layout_mode = 2
+theme = ExtResource("10_choun")
+text = "200"
+script = ExtResource("15_muem4")
 
 [node name="CrateDrop" parent="." unique_id=1377215731 instance=ExtResource("13_trceg")]
 process_mode = 3
@@ -176,5 +192,5 @@ visible = false
 [node name="Victory" parent="." unique_id=2047150554 instance=ExtResource("16_jbj1t")]
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer1/NextStateButton" to="." method="_on_next_state_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer2/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer2/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="chose_crate" from="CrateDrop" to="." method="_on_crate_chosen"]
