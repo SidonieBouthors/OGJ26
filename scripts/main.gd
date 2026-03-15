@@ -1,12 +1,13 @@
 extends Node2D
 
 @onready var NAME_TO_ID: Dictionary[String, int] = { State.PARROT.name() : 0, State.BERRIES_BUSH.name() : 1, State.COCONUT_TREE.name(): 2, State.BEAVER.name(): 3, State.BEAR.name(): 4, State.OCELOT.name(): 5 } 
-@onready var ISLAND_CELLS = $Island.get_used_cells_by_id(0)
+@onready var ISLAND_CELLS : Array[Vector2i] = $Island.get_used_cells_by_id(0)
 
 var available_positions : Array[Vector2i]
 var prev_state: Dictionary[String, int] 
 
 func _ready():
+	Global.max_entities = ISLAND_CELLS.size()
 	available_positions = ISLAND_CELLS.duplicate()
 	$Entities.clear()
 	for species : String in Global.state:
@@ -19,7 +20,7 @@ func _ready():
 func next_cycle():
 	Global.reproduce()
 	animate()
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(0.1).timeout
 	Global.apply_constraints()
 	animate()
 	$NextStateButton.disabled = false
@@ -44,6 +45,14 @@ func animate() -> void:
 				var removed_pos : Vector2i = current_entity_positions.pop_back()
 				$Entities.erase_cell(removed_pos)
 				available_positions.append(removed_pos)
+				
+				#DEBUG
+		var num_tiles = $Entities.get_used_cells_by_id(NAME_TO_ID[species]).size()
+		var actual = Global.state[species]
+		if actual != num_tiles:
+			print("number of tiles with ", species,": ", num_tiles, ". Expected: ", actual )
+			#END DEBUG
+			
 	prev_state = Global.state.duplicate()
 	$Counter/EntityCountPanel.update()
 
@@ -66,6 +75,7 @@ func spawn_crate():
 
 
 func _on_crate_chosen(species, quantity):
+	quantity = min(Global.max_entities - Global.count_total(), quantity)
 	Global.state[species] = Global.state[species] + quantity
 	animate()
 

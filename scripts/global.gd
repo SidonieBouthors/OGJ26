@@ -28,6 +28,8 @@ var state: Dictionary[String, int] = entities.keys().reduce(func(acc, ent_name):
 var cycle_number = 0
 var victory_condition_met_count = 0
 
+var max_entities: int
+
 func _ready() -> void:
 	state["parrot"] = 10
 	state["coconut_tree"] = 10
@@ -67,8 +69,23 @@ func apply_constraints():
 	cycle_number += 1
 
 func reproduce():
-	for ent_name in state:
-		state[ent_name] = entities[ent_name].reproduction_stats().apply(state[ent_name], cycle_number)
+	var ideal_state : Dictionary[String, int] = state.duplicate()
+	for ent_name in ideal_state:
+		ideal_state[ent_name] = entities[ent_name].reproduction_stats().apply(ideal_state[ent_name], cycle_number)
+	if (count_total(ideal_state) > max_entities):
+		print("ideal count_total:", count_total(ideal_state))
+		var ratio : float = (max_entities as float) / count_total(ideal_state)
+		
+		#TODO: can probably be turned into a reduce/fold but I don't know how
+		for species in ideal_state:
+			ideal_state[species] = max((floorf(ideal_state[species] * ratio) as int) - 1, state[species])
+	state = ideal_state
+	print("actual count_total:", count_total())
+
+
+func count_total(temp_state: Dictionary[String, int] = state) -> int:
+	return temp_state.values().reduce(func(acc, count):
+		return acc + count)
 
 func check_victory():
 	if state.values().all(func(c): return c >= 3):
