@@ -23,7 +23,14 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		if $CanvasLayer/CenterContainer/Summary.visible == true:
+			$CanvasLayer/CenterContainer/Summary.visible = false
+			$CanvasLayer/MarginContainer1/NextStateButton.disabled = false
+
+		else:
+			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	if $CanvasLayer/CenterContainer/Summary.visible == true:
+		$CanvasLayer/MarginContainer1/NextStateButton.disabled = true
 
 func next_cycle():
 	Global.reproduce()
@@ -81,9 +88,15 @@ func _on_crate_chosen(species: String, quantity: int):
 
 
 func _on_next_state_button_pressed():
+	if $CanvasLayer/CenterContainer/Summary.visible == true:
+		$CanvasLayer/CenterContainer/Summary.visible = false
 	$CanvasLayer/MarginContainer1/NextStateButton.disabled = true
 	next_cycle()
 
 
 func _on_restart_button_pressed():
 	get_tree().reload_current_scene()
+
+
+func _on_summary_toggle_next_button():
+	$CanvasLayer/MarginContainer1/NextStateButton.disabled = not $CanvasLayer/MarginContainer1/NextStateButton.disabled

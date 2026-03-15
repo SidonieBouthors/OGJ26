@@ -2,6 +2,8 @@ extends PanelContainer
 
 const ENTRY_SCENE = preload("res://scenes/summary_entry.tscn")
 
+signal disable_next_button
+
 const SPRITE_FRAMES: Dictionary[String, SpriteFrames] = {
 	"bear_beaver": preload("res://art/sprites/entities/animations/bear_beaver.tres"),
 	"bear_berries_bush": preload("res://art/sprites/entities/animations/bear_berries_bush.tres"),
@@ -51,6 +53,9 @@ func _on_cycle():
 
 	if to_show:
 		visible = true
+		disable_next_button.emit()
+		
 
 func _on_hide():
 	visible = false
+	disable_next_button.emit()
