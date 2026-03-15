@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by8x4hw5qxsca"
-path="res://.godot/imported/coconut.png-88e6e3262a4e5ee81fc9dae3549ea9d1.ctex"
+uid="uid://dn67qxku58nrb"
+path="res://.godot/imported/berries_bush.png-02fa603526115200f0a558d4b51f7c54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/tiles/coconut.png"
-dest_files=["res://.godot/imported/coconut.png-88e6e3262a4e5ee81fc9dae3549ea9d1.ctex"]
+source_file="res://art/sprites/entities/berries_bush.png"
+dest_files=["res://.godot/imported/berries_bush.png-02fa603526115200f0a558d4b51f7c54.ctex"]
 
 [params]
 

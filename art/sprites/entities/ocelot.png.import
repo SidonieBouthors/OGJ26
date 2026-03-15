@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6rltqo6aedix"
-path="res://.godot/imported/coconut_tree.png-8ca7560d30739fe3ee1452657c13256d.ctex"
+uid="uid://ccrovlai4t2uf"
+path="res://.godot/imported/ocelot.png-1ae61765b5a50d90d16cbd1f9f1e9639.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/tiles/coconut_tree.png"
-dest_files=["res://.godot/imported/coconut_tree.png-8ca7560d30739fe3ee1452657c13256d.ctex"]
+source_file="res://art/sprites/entities/ocelot.png"
+dest_files=["res://.godot/imported/ocelot.png-1ae61765b5a50d90d16cbd1f9f1e9639.ctex"]
 
 [params]
 

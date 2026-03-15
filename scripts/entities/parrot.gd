@@ -14,5 +14,13 @@ func update_state(state: State.TemporaryState, _cycle: int):
 func name() -> String:
 	return "parrot"
 
+
+func crate_quantity() -> Array:
+	return [1, 2, 3]
+
+
+func texture() -> CompressedTexture2D:
+	return preload("res://art/sprites/entities/parrot.png")
+
 func reproduction_stats() -> ReproductionStats:
 	return ReproductionStats.init(randf_range(1.5, 2.5), 1, 2)

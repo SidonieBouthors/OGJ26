@@ -2,11 +2,18 @@ extends Node
 
 class_name Entity
 
+
 func update_state(_state: State.TemporaryState, _cycle: int):
 	pass
 
 func name() -> String:
 	return "entity"
+
+func crate_quantity() -> Array:
+	return [1, 2, 3]
+
+func texture() -> CompressedTexture2D:
+	return load("res://art/sprites/entities/" + name() +".png")
 
 func reproduction_stats() -> ReproductionStats:
 	return ReproductionStats.init(1, -1, 0)

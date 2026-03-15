@@ -9,5 +9,13 @@ func update_state(state: State.TemporaryState, _cycle: int):
 func name() -> String:
 	return "berries_bush"
 
+
+func crate_quantity() -> Array:
+	return [2, 3]
+
+
+func texture() -> CompressedTexture2D:
+	return preload("res://art/sprites/entities/berries_bush.png")
+
 func reproduction_stats() -> ReproductionStats:
 	return ReproductionStats.init(randf_range(1.1, 1.3), 1, 2)

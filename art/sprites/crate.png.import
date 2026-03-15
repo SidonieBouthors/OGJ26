@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn67qxku58nrb"
-path="res://.godot/imported/berries_bush.png-21cecf7a412ff76aae7c3f314aee401f.ctex"
+uid="uid://chprxflh20h6y"
+path="res://.godot/imported/crate.png-085cd8e63ed64376e1b7a28fa71f6e25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/tiles/berries_bush.png"
-dest_files=["res://.godot/imported/berries_bush.png-21cecf7a412ff76aae7c3f314aee401f.ctex"]
+source_file="res://art/sprites/crate.png"
+dest_files=["res://.godot/imported/crate.png-085cd8e63ed64376e1b7a28fa71f6e25.ctex"]
 
 [params]
 
