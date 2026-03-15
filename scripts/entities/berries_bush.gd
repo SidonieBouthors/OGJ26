@@ -3,12 +3,13 @@ class_name BerriesBush
 
 func update_state(state: State.TemporaryState, _cycle: int):
 	if randi() % 10  == 0:
-		state.destruct(State.OCELOT.name())
+		state.destruct(self, State.OCELOT, "poisoned")
 	pass
 
 func name() -> String:
 	return "berries_bush"
-
+func display_name(plural: bool):
+	return "berry bushes" if plural else "berry bush"
 
 func crate_quantity() -> Array:
 	return [2, 3]

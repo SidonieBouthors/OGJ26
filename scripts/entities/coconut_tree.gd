@@ -1,13 +1,15 @@
 extends Entity
 class_name CoconutTree
 
-func update_state(state: State.TemporaryState, cycle: int):
+func update_state(state: State.TemporaryState, _cycle: int):
 	if randi() % 30 == 0:
-		state.destruct(State.BEAR.name())
+		state.destruct(self, State.BEAR, "smashed")
 	pass
 
 func name() -> String:
 	return "coconut_tree"
+func display_name(plural: bool):
+	return super(plural) if plural else "coconut tree"
 
 func crate_quantity() -> Array:
 	return [2, 3]

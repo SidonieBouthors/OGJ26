@@ -13,7 +13,7 @@
 [ext_resource type="Theme" uid="uid://cpxsxdgetgvil" path="res://art/special_button.tres" id="12_trceg"]
 [ext_resource type="Texture2D" uid="uid://dncpodjtp6pms" path="res://art/sprites/arrow.png" id="13_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://bg73r2yp62nw1" path="res://scenes/crate-drop.tscn" id="13_trceg"]
-[ext_resource type="Script" uid="uid://d2j4k8ylg8ucl" path="res://scenes/entity-count-panel.gd" id="15_jbj1t"]
+[ext_resource type="Script" path="res://scenes/entity-count-panel.gd" id="15_jbj1t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dp3eg"]
 texture = ExtResource("2_tipki")

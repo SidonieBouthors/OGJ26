@@ -8,6 +8,11 @@ func update_state(_state: State.TemporaryState, _cycle: int):
 
 func name() -> String:
 	return "entity"
+func display_name(plural: bool):
+	if plural:
+		return display_name(false) + "s"
+	else:
+		return ""
 
 func crate_quantity() -> Array:
 	return [1, 2, 3]
