@@ -31,12 +31,18 @@ var victory_condition_met_count = 0
 var max_entities: int
 
 func _ready() -> void:
-	state["parrot"] = 10
-	state["coconut_tree"] = 10
-	state["berries_bush"] = 10
-	state["bear"] = 3
-	state["beaver"] = 4
-	state["ocelot"] = 6
+	#state["parrot"] = 10
+	#state["coconut_tree"] = 10
+	#state["berries_bush"] = 10
+	#state["bear"] = 3
+	#state["beaver"] = 4
+	#state["ocelot"] = 6
+	state["parrot"] = 3
+	state["coconut_tree"] = 3
+	state["berries_bush"] = 4
+	state["bear"] = 0
+	state["beaver"] = 0
+	state["ocelot"] = 0
 
 func apply_constraints():
 	var timeline: Array[Entity] = state.keys().reduce(func(acc: Array[Entity], ent_name):
@@ -72,15 +78,21 @@ func reproduce():
 	var ideal_state : Dictionary[String, int] = state.duplicate()
 	for ent_name in ideal_state:
 		ideal_state[ent_name] = entities[ent_name].reproduction_stats().apply(ideal_state[ent_name], cycle_number)
+	#The following code ensures that the entities that wish to reproduce do it fairly within
+	#the constraints of the island
 	if (count_total(ideal_state) > max_entities):
-		print("ideal count_total:", count_total(ideal_state))
-		var ratio : float = (max_entities as float) / count_total(ideal_state)
+		var ideal_increase: Dictionary[String, int] = sub_dicts(ideal_state, state)
+		var current_count: int = count_total(state)
+		var ratio: float = (max_entities - current_count) as float / count_total(ideal_increase)
+		for species in ideal_increase:
+			ideal_increase[species] = max((floorf(ideal_increase[species] * ratio) as int) -1, 0)
+		ideal_state = add_dicts(state, ideal_increase)
 		
-		#TODO: can probably be turned into a reduce/fold but I don't know how
-		for species in ideal_state:
-			ideal_state[species] = max((floorf(ideal_state[species] * ratio) as int) - 1, state[species])
+		print("actual count_total:", count_total(ideal_state))
+		#DEBUG
+		if count_total(ideal_state) > 200:
+			pass
 	state = ideal_state
-	print("actual count_total:", count_total())
 
 
 func count_total(temp_state: Dictionary[String, int] = state) -> int:
@@ -133,3 +145,16 @@ class EntityTemporaryState:
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
+
+
+func sub_dicts(a: Dictionary[String, int], b: Dictionary[String, int]) -> Dictionary[String, int]:
+	var result = a.duplicate()
+	for key in a:
+		result[key] = a[key] - b.get(key, 0)
+	return result
+
+func add_dicts(a: Dictionary[String, int], b: Dictionary[String, int]) -> Dictionary[String, int]:
+	var result = a.duplicate()
+	for key in a:
+		result[key] = a[key] + b.get(key, 0)
+	return result
