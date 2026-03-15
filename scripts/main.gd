@@ -28,7 +28,6 @@ func _process(_delta):
 func next_cycle():
 	Global.reproduce()
 	animate()
-	#await get_tree().create_timer(2.0).timeout
 	Global.apply_constraints()
 	animate()
 	$CanvasLayer/MarginContainer1/NextStateButton.disabled = false
