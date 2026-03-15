@@ -18,7 +18,7 @@ const SOUNDS_MAPPING: Dictionary[String, Array] = {
 	"bear_beaver": ["eating-bear"],
 	"bear_berries_bush": ["eating-bear"],
 	"bear_growth": [],
-	"bear_starve": [],
+	"bear_starve": ["dying-bear"],
 	"beaver_coconut_tree": ["eating-beaver"],
 	"beaver_growth": [],
 	"beaver_starve": [],
@@ -48,20 +48,27 @@ func play_sound():
 		"eating-parrot": 0,
 	}
 
+	var sound_name
+
 	for id in Logbook.entries:
 		for sound in SOUNDS_MAPPING[id]:
 			state[sound]  += Logbook.entries[id].count
 
-	var max_ids = []
-	var max_value = 0
-	for id in state:
-		if max_value == state[id]:
-			max_ids.append(id)
-		elif max_value < state[id]:
-			max_ids = [id]
-			max_value = state[id]
+	if state["dying-bear"] > 0:
+		sound_name = "dying-bear"
+	else:
+		var max_ids = []
+		var max_value = 0
+		for id in state:
+			if max_value == state[id]:
+				max_ids.append(id)
+			elif max_value < state[id]:
+				max_ids = [id]
+				max_value = state[id]
+		
+		sound_name = max_ids.pick_random()
 
-	$SFX.stream = SOUNDS[max_ids.pick_random()]
+	$SFX.stream = SOUNDS[sound_name]
 	$SFX.play()
 
 
