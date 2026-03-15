@@ -106,7 +106,7 @@ func reproduce():
 	
 	for e in ideal_state:
 		if ideal_state[e] > state[e]:
-			Logbook.add("%s_growth" % e, ideal_state[e] - state[e])
+			Logbook.add("%s_growth" % e, ideal_state[e] - state[e], Logbook.Entry.Category.Growth)
 	
 	state = ideal_state
 
@@ -162,7 +162,7 @@ class TemporaryState:
 		if state[ent].alive > 0:
 			state[ent].alive -= 1
 			state[ent].available -= 1
-			Logbook.add("%s_%s" % [ent.name(), cause], 1)
+			Logbook.add("%s_%s" % [ent.name(), cause], 1, Logbook.Entry.Category.Death)
 
 class EntityTemporaryState:
 	var alive: int
