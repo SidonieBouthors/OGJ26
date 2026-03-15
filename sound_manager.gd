@@ -18,7 +18,7 @@ const SOUNDS_MAPPING: Dictionary[String, Array] = {
 	"bear_beaver": ["eating-bear"],
 	"bear_berries_bush": ["eating-bear"],
 	"bear_growth": [],
-	"bear_starve": ["dying-bear"],
+	"bear_starve": [],
 	"beaver_coconut_tree": ["eating-beaver"],
 	"beaver_growth": [],
 	"beaver_starve": [],
