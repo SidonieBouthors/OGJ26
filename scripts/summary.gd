@@ -28,7 +28,7 @@ const SPRITE_FRAMES: Dictionary[String, SpriteFrames] = {
 
 var COLORS: Dictionary[Logbook.Entry.Category, Color] = {
 	Logbook.Entry.Category.Growth: Color.from_string("#25b700", Color.GREEN),
-	Logbook.Entry.Category.Death: Color.from_string("#d50000", Color.RED),
+	Logbook.Entry.Category.Death: Color.from_string("#A70000", Color.RED),
 	Logbook.Entry.Category.Neutral: Color.from_string("#ecd3ac", Color.WHITE),
 }
 
@@ -49,6 +49,8 @@ func _on_cycle():
 			to_show = true
 		else:
 			print("animation id not found: ", id)
+
+	SoundManager.play_sound()
 	Logbook.entries.clear()
 
 	if to_show:

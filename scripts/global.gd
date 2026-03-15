@@ -78,8 +78,9 @@ func apply_constraints():
 	, {} as Dictionary[String, int])
 
 
-	check_victory()
-	cycle_number += 1
+	if !check_victory():
+		cycle_number += 1
+		cycle_done.emit()
 
 func reproduce():
 	var ideal_state: Dictionary[String, int] = state.duplicate()
@@ -115,7 +116,7 @@ func count_total(temp_state: Dictionary[String, int] = state) -> int:
 	return temp_state.values().reduce(func(acc, count):
 		return acc + count)
 
-func check_victory():
+func check_victory() -> bool:
 	if state.values().all(func(c): return c >= 1):
 		victory_condition_met_count += 1
 	else:
@@ -123,8 +124,8 @@ func check_victory():
 
 	if victory_condition_met_count >= 3:
 		victory.emit()
-	else:
-		cycle_done.emit()
+		return true
+	return false
 
 
 class TemporaryState:
